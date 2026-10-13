@@ -1258,3 +1258,129 @@ progress {
     transition: none !important;
   }
 }
+
+.data-backups {
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+.data-heading {
+  display: flex;
+  gap: 9px;
+  align-items: center;
+  margin-bottom: 12px;
+  color: var(--green);
+}
+.data-heading h3 {
+  font-size: 16px;
+  color: #e7eaf0;
+}
+.data-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+.data-actions .secondary {
+  font-size: 11px;
+  padding: 10px 12px;
+}
+.data-hint {
+  color: #a7b1c0;
+  font-size: 11px;
+  line-height: 1.7;
+  margin: 12px 0;
+}
+.file-picker {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.backup-card {
+  padding: 17px;
+  margin: 20px 0 12px;
+  background: #202630;
+  border: 1px solid #3b4653;
+  border-radius: 8px;
+}
+.backup-card h4,
+.replacement-preview h4 {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.backup-card p {
+  color: #a7b1c0;
+  line-height: 1.6;
+  font-size: 12px;
+  margin: 10px 0 15px;
+}
+.backup-card strong {
+  color: #e7eaf0;
+  font-weight: 500;
+  margin-right: 10px;
+}
+.backup-card p span {
+  display: block;
+  font-size: 11px;
+  margin-top: 4px;
+}
+.data-status {
+  color: var(--green);
+  font-size: 12px;
+  padding: 12px 0;
+}
+.replacement-preview {
+  border: 1px solid #789361;
+  border-radius: 8px;
+  padding: 18px;
+  margin-top: 22px;
+  background: #1e271e;
+}
+.preview-stats {
+  margin: 17px 0;
+}
+.preview-stats div {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  border-bottom: 1px solid #3e493c;
+  padding: 9px 0;
+  font-size: 11px;
+}
+.preview-stats dt {
+  color: #b8c4b3;
+}
+.preview-stats dd {
+  margin: 0;
+  text-align: right;
+  color: #edf3e9;
+}
+.replacement-warning {
+  font-size: 12px;
+  line-height: 1.8;
+  color: #e1ebda;
+}
+.backup-warning {
+  margin-top: 15px;
+  padding: 12px;
+  border: 1px solid #735c35;
+  border-radius: 6px;
+  background: #332b1f;
+  color: #f3d7a4;
+  font-size: 11px;
+  line-height: 1.8;
+}
+@media (max-width: 480px) {
+  .data-actions .secondary {
+    flex: 1;
+    white-space: normal;
+  }
+  .preview-stats div {
+    flex-wrap: wrap;
+  }
+  .replacement-preview {
+    padding: 14px;
+  }
+}

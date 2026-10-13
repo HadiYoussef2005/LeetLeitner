@@ -11,9 +11,11 @@ const context = await browser.newContext({
 const page = await context.newPage();
 const errors = [];
 page.on("pageerror", (e) => errors.push(e.message));
-const url = "http://127.0.0.1:4173/";
+const url = "http://127.0.0.1:4173/leetleitner/";
 const data = () =>
-  page.evaluate(() => JSON.parse(localStorage.getItem("leetleitner.v1")));
+  page.evaluate(
+    () => JSON.parse(localStorage.getItem("leetleitner.v1")).activeState,
+  );
 const add = async (number, title, outcome = "Solved") => {
   await page.getByRole("button", { name: "Add problem", exact: true }).click();
   await page.getByLabel("Problem number", { exact: true }).fill(String(number));
@@ -31,9 +33,9 @@ const add = async (number, title, outcome = "Solved") => {
     .click();
   await page.waitForFunction(
     (n) =>
-      JSON.parse(localStorage.getItem("leetleitner.v1")).problems.some(
-        (p) => p.problemNumber === n,
-      ),
+      JSON.parse(
+        localStorage.getItem("leetleitner.v1"),
+      ).activeState.problems.some((p) => p.problemNumber === n),
     number,
   );
 };
@@ -74,7 +76,7 @@ try {
   // Controlled fixture: exercise due and overdue sessions without waiting days.
   await page.evaluate(() => {
     const s = JSON.parse(localStorage.getItem("leetleitner.v1"));
-    s.problems.forEach((p) => (p.nextReviewDueDate = "2020-01-01"));
+    s.activeState.problems.forEach((p) => (p.nextReviewDueDate = "2020-01-01"));
     localStorage.setItem("leetleitner.v1", JSON.stringify(s));
   });
   await page.reload();

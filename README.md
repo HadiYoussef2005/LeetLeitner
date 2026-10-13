@@ -11,6 +11,8 @@ npm install
 npm run dev
 ```
 
+Open the printed `/leetleitner/` URL. The app is prepared to deploy beneath that path. See [DEPLOYMENT.md](DEPLOYMENT.md) for the Vercel setup and connection to the existing portfolio.
+
 ## Validate and build
 
 ```sh
@@ -34,9 +36,28 @@ React + TypeScript + Vite, with custom responsive CSS and LocalStorage persisten
 
 Storage is scoped to this browser and origin. Clearing browser data removes progress. One active editing tab is supported; a detected change from another tab locks writes until reload. Invalid or unsupported stored data is preserved, with a recovery download available. Schema version 1 is the initial format; unknown future schemas are rejected safely.
 
+## Export, import, and restore
+
+Open **Preferences → Data & Backups**.
+
+- **Export current state** downloads a single UTF-8 `.txt` file containing JSON: all problems, IDs, attempt history, schedules, intervals, and sorting preferences. No account or network connection is needed.
+- **Import state** validates an export (maximum 10 MiB) in a background worker, then shows counts, history, intervals, and an explicit replacement confirmation. Import fully replaces your system; it does not merge collections or recalculate dates.
+- Each successful import saves the current system as **one previous backup**. If a backup already exists, the preview warns that it will be overwritten and offers a download first.
+- **Download previous backup** creates an importable `.txt` file. **Restore previous backup** swaps the active system and backup after confirmation, so you can reverse a restore.
+- Invalid files, cancellation, storage quota failures, and stale previews leave the active state and backup unchanged. Replacing the system resets filters, pagination, selected problems, and review sessions.
+
+The local backup disappears if browser site data is cleared. Download a file for recovery on another device or after clearing browser data. The application migrates the original state into storage envelope version 2 under the same `leetleitner.v1` key. Active state and backup commit together in one storage write; export format version 1 and state schema version 1 are separate from storage versioning.
+
+With a production preview running on port 4173, verify data portability with:
+
+```sh
+npm run test:portability
+npm run test:restart
+```
+
 ## Architecture
 
-`src/engine.ts` contains pure scheduling and validation functions. `src/storage.ts` owns the versioned storage contract. `src/App.tsx` coordinates dashboard, entry, history, preferences, and review sessions. Writes persist before successful UI confirmation, and storage failures leave prior UI state intact.
+`src/engine.ts` contains scheduling and form validation functions. `src/storage.ts` exposes the versioned storage contract implemented in `src/state-storage.ts`. `src/export-format.ts` validates portable files, `src/import.worker.ts` parses and validates off the main thread, and `src/DataBackups.tsx` provides previews and recovery controls. `src/App.tsx` coordinates dashboard, entry, history, preferences, and review sessions. Writes persist before successful UI confirmation, and storage failures leave prior UI state intact.
 
 ## Verification
 

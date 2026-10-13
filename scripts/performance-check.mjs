@@ -6,7 +6,7 @@ try {
   const page = await browser.newPage({
     viewport: { width: 1440, height: 1000 },
   });
-  await page.goto("http://127.0.0.1:4173/");
+  await page.goto("http://127.0.0.1:4173/leetleitner/");
   await page.evaluate(() => {
     const now = new Date().toISOString();
     const problems = Array.from({ length: 1000 }, (_, i) => ({

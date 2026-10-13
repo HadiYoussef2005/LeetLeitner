@@ -1,3 +1,8 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-export default defineConfig({ plugins: [react()] });
+import hosting from "./hosting.config.json";
+export default defineConfig({
+  plugins: [react()],
+  base: hosting.base,
+  build: { outDir: `dist${hosting.base.slice(0, -1)}` },
+});

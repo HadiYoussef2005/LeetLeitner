@@ -42,7 +42,14 @@ import {
   type Outcome,
   type Sort,
 } from "./engine";
-import { loadStore, saveStore, STORAGE_KEY } from "./storage";
+import {
+  loadSnapshot,
+  saveActive,
+  STORAGE_KEY,
+  StorageConflictError,
+  type Snapshot,
+} from "./storage";
+import DataBackups from "./DataBackups";
 
 const SaveErrorContext = createContext("");
 
@@ -110,10 +117,19 @@ function dueLabel(p: Problem, today: string) {
 export default function App() {
   const [initial] = useState(() => {
     try {
-      return { store: loadStore(), error: "" };
+      const snapshot = loadSnapshot();
+      return { store: snapshot.envelope.activeState, snapshot, error: "" };
     } catch (e) {
       return {
         store: defaults(),
+        snapshot: {
+          raw: null,
+          envelope: {
+            storageVersion: 2,
+            activeState: defaults(),
+            previousBackup: null,
+          },
+        } as Snapshot,
         error:
           e instanceof Error ? e.message : "Unable to access browser storage.",
       };
@@ -143,6 +159,7 @@ export default function App() {
   const [notice, setNotice] = useState(""),
     [today, setToday] = useState(localDate());
   const busy = useRef(false);
+  const snapshotRef = useRef<Snapshot>(initial.snapshot);
   useEffect(() => {
     const tick = () => setToday(localDate());
     const timer = window.setInterval(tick, 30000);
@@ -159,7 +176,7 @@ export default function App() {
   }, [notice]);
   useEffect(() => {
     const handler = (e: StorageEvent) => {
-      if (e.key === STORAGE_KEY) {
+      if (e.key === STORAGE_KEY || e.key === null) {
         setLocked(true);
         setError(
           "Data changed in another tab. Reload this tab before making further changes.",
@@ -173,12 +190,17 @@ export default function App() {
     if (locked || busy.current) return false;
     busy.current = true;
     try {
-      saveStore(next);
+      snapshotRef.current = saveActive(next, snapshotRef.current);
       setStore(next);
       setError("");
       if (message) setNotice(message);
       return true;
-    } catch {
+    } catch (e) {
+      if (e instanceof StorageConflictError) {
+        setLocked(true);
+        setError(e.message);
+        return false;
+      }
       setError(
         "Could not save to browser storage. Your change was not saved. Free up browser storage and try again.",
       );
@@ -186,6 +208,21 @@ export default function App() {
     } finally {
       busy.current = false;
     }
+  }
+  function activateReplacement(snapshot: Snapshot) {
+    snapshotRef.current = snapshot;
+    setStore(snapshot.envelope.activeState);
+    setError("");
+    setSession(null);
+    setDetail(null);
+    setEditor(null);
+    setSettingsOpen(false);
+    setQuery("");
+    setDifficulty("All difficulties");
+    setPages({ 1: 0, 2: 0, 3: 0 });
+    setQueuePage(0);
+    setView("dashboard");
+    setToday(localDate());
   }
   const queue = dueQueue(store.problems, today),
     overdue = queue.filter((p) => p.nextReviewDueDate < today).length;
@@ -818,6 +855,16 @@ export default function App() {
                 </button>
               </div>
             </form>
+            <DataBackups
+              locked={locked}
+              snapshot={snapshotRef.current}
+              onReplaced={activateReplacement}
+              onNotice={setNotice}
+              onConflict={(message) => {
+                setLocked(true);
+                setError(message);
+              }}
+            />
           </Modal>
         )}
         {detail && (

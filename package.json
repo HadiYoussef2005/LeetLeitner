@@ -10,7 +10,10 @@
     "test": "vitest run",
     "test:browser": "node scripts/browser-check.mjs",
     "test:performance": "node scripts/performance-check.mjs",
-    "test:restart": "node scripts/persistence-check.mjs"
+    "test:restart": "node scripts/persistence-check.mjs",
+    "test:portability": "node scripts/portability-check.mjs",
+    "prebuild": "node scripts/clean-build.mjs",
+    "test:hosting": "node scripts/hosting-check.mjs"
   },
   "dependencies": {
     "lucide-react": "^0.468.0",

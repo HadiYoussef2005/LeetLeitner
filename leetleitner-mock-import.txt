@@ -1,0 +1,1495 @@
+{
+  "format": "leetleitner-state",
+  "exportVersion": 1,
+  "exportedAt": "2026-10-12T16:00:00.000Z",
+  "state": {
+    "schemaVersion": 1,
+    "problems": [
+      {
+        "schemaVersion": 1,
+        "id": "b0d003f2-893d-4bdb-bf2f-e3d5f73df25f",
+        "problemNumber": 7,
+        "title": "Reverse Integer",
+        "url": "https://leetcode.com/problems/reverse-integer/",
+        "currentBucket": 1,
+        "difficulty": "Medium",
+        "tags": [
+          "Math"
+        ],
+        "createdAt": "2026-09-30T16:00:00.000Z",
+        "updatedAt": "2026-10-04T16:00:00.000Z",
+        "initialAttemptAt": "2026-09-30T16:00:00.000Z",
+        "lastReviewedAt": "2026-10-04T16:00:00.000Z",
+        "nextReviewDueDate": "2026-10-06",
+        "lastSchedulingTimeZone": "America/Toronto",
+        "reviewHistory": [
+          {
+            "id": "03cd5ecc-eaf2-43b3-abad-3c7932704a7e",
+            "eventType": "initial_attempt",
+            "occurredAt": "2026-09-30T16:00:00.000Z",
+            "outcome": "solved_with_help",
+            "previousBucket": null,
+            "newBucket": 2,
+            "intervalDaysApplied": 4,
+            "nextReviewDueDate": "2026-10-04"
+          },
+          {
+            "id": "e58f7848-c00f-4433-afbd-e18b0eaa1ad0",
+            "eventType": "review",
+            "occurredAt": "2026-10-04T16:00:00.000Z",
+            "outcome": "could_not_solve",
+            "previousBucket": 2,
+            "newBucket": 1,
+            "intervalDaysApplied": 2,
+            "nextReviewDueDate": "2026-10-06"
+          }
+        ]
+      },
+      {
+        "schemaVersion": 1,
+        "id": "a028e20a-c211-47c6-a449-2b9847c1d063",
+        "problemNumber": 19,
+        "title": "Remove Nth Node From End of List",
+        "url": "https://leetcode.com/problems/remove-nth-node-from-end-of-list/",
+        "currentBucket": 2,
+        "difficulty": "Medium",
+        "tags": [
+          "Linked List",
+          "Two Pointers"
+        ],
+        "createdAt": "2026-09-23T16:00:00.000Z",
+        "updatedAt": "2026-10-03T16:00:00.000Z",
+        "initialAttemptAt": "2026-09-23T16:00:00.000Z",
+        "lastReviewedAt": "2026-10-03T16:00:00.000Z",
+        "nextReviewDueDate": "2026-10-07",
+        "lastSchedulingTimeZone": "America/Toronto",
+        "reviewHistory": [
+          {
+            "id": "3714cb4f-fa3f-47ae-b17f-40865080b267",
+            "eventType": "initial_attempt",
+            "occurredAt": "2026-09-23T16:00:00.000Z",
+            "outcome": "solved",
+            "previousBucket": null,
+            "newBucket": 3,
+            "intervalDaysApplied": 10,
+            "nextReviewDueDate": "2026-10-03"
+          },
+          {
+            "id": "df575730-a271-43ff-b0b6-7756ff8916bb",
+            "eventType": "review",
+            "occurredAt": "2026-10-03T16:00:00.000Z",
+            "outcome": "solved_with_help",
+            "previousBucket": 3,
+            "newBucket": 2,
+            "intervalDaysApplied": 4,
+            "nextReviewDueDate": "2026-10-07"
+          }
+        ]
+      },
+      {
+        "schemaVersion": 1,
+        "id": "3558a8e0-3e6a-4962-a107-122450f1e567",
+        "problemNumber": 5,
+        "title": "Longest Palindromic Substring",
+        "url": "https://leetcode.com/problems/longest-palindromic-substring/",
+        "currentBucket": 3,
+        "difficulty": "Medium",
+        "tags": [
+          "String",
+          "Dynamic Programming"
+        ],
+        "createdAt": "2026-09-27T16:00:00.000Z",
+        "updatedAt": "2026-09-29T16:00:00.000Z",
+        "initialAttemptAt": "2026-09-27T16:00:00.000Z",
+        "lastReviewedAt": "2026-09-29T16:00:00.000Z",
+        "nextReviewDueDate": "2026-10-09",
+        "lastSchedulingTimeZone": "America/Toronto",
+        "reviewHistory": [
+          {
+            "id": "d093b791-1394-48d1-af06-fe102a5d807b",
+            "eventType": "initial_attempt",
+            "occurredAt": "2026-09-27T16:00:00.000Z",
+            "outcome": "could_not_solve",
+            "previousBucket": null,
+            "newBucket": 1,
+            "intervalDaysApplied": 2,
+            "nextReviewDueDate": "2026-09-29"
+          },
+          {
+            "id": "44e9cee7-ddf5-4736-9d76-3cab59a51e11",
+            "eventType": "review",
+            "occurredAt": "2026-09-29T16:00:00.000Z",
+            "outcome": "solved",
+            "previousBucket": 1,
+            "newBucket": 3,
+            "intervalDaysApplied": 10,
+            "nextReviewDueDate": "2026-10-09"
+          }
+        ]
+      },
+      {
+        "schemaVersion": 1,
+        "id": "00279eaf-ca83-490e-abab-279314ddc835",
+        "problemNumber": 36,
+        "title": "Valid Sudoku",
+        "url": "https://leetcode.com/problems/valid-sudoku/",
+        "currentBucket": 1,
+        "difficulty": "Medium",
+        "tags": [
+          "Matrix",
+          "Hash Table"
+        ],
+        "createdAt": "2026-10-02T16:00:00.000Z",
+        "updatedAt": "2026-10-06T16:00:00.000Z",
+        "initialAttemptAt": "2026-10-02T16:00:00.000Z",
+        "lastReviewedAt": "2026-10-06T16:00:00.000Z",
+        "nextReviewDueDate": "2026-10-08",
+        "lastSchedulingTimeZone": "America/Toronto",
+        "reviewHistory": [
+          {
+            "id": "63eb9ff8-bb92-4a07-928e-9310e016aab4",
+            "eventType": "initial_attempt",
+            "occurredAt": "2026-10-02T16:00:00.000Z",
+            "outcome": "solved_with_help",
+            "previousBucket": null,
+            "newBucket": 2,
+            "intervalDaysApplied": 4,
+            "nextReviewDueDate": "2026-10-06"
+          },
+          {
+            "id": "56ba4f93-3a5f-43c5-b19b-5621306791e0",
+            "eventType": "review",
+            "occurredAt": "2026-10-06T16:00:00.000Z",
+            "outcome": "could_not_solve",
+            "previousBucket": 2,
+            "newBucket": 1,
+            "intervalDaysApplied": 2,
+            "nextReviewDueDate": "2026-10-08"
+          }
+        ]
+      },
+      {
+        "schemaVersion": 1,
+        "id": "4cd5f9df-0832-4f2f-ab1f-3f1124147b9b",
+        "problemNumber": 23,
+        "title": "Merge k Sorted Lists",
+        "url": "https://leetcode.com/problems/merge-k-sorted-lists/",
+        "currentBucket": 2,
+        "difficulty": "Hard",
+        "tags": [
+          "Heap",
+          "Linked List"
+        ],
+        "createdAt": "2026-09-25T16:00:00.000Z",
+        "updatedAt": "2026-10-05T16:00:00.000Z",
+        "initialAttemptAt": "2026-09-25T16:00:00.000Z",
+        "lastReviewedAt": "2026-10-05T16:00:00.000Z",
+        "nextReviewDueDate": "2026-10-09",
+        "lastSchedulingTimeZone": "America/Toronto",
+        "reviewHistory": [
+          {
+            "id": "7b0e2ce4-e94d-4fbf-a7fd-45fe89dc2379",
+            "eventType": "initial_attempt",
+            "occurredAt": "2026-09-25T16:00:00.000Z",
+            "outcome": "solved",
+            "previousBucket": null,
+            "newBucket": 3,
+            "intervalDaysApplied": 10,
+            "nextReviewDueDate": "2026-10-05"
+          },
+          {
+            "id": "753e1a36-60fe-4aca-af8c-cf4d6eeb98e6",
+            "eventType": "review",
+            "occurredAt": "2026-10-05T16:00:00.000Z",
+            "outcome": "solved_with_help",
+            "previousBucket": 3,
+            "newBucket": 2,
+            "intervalDaysApplied": 4,
+            "nextReviewDueDate": "2026-10-09"
+          }
+        ]
+      },
+      {
+        "schemaVersion": 1,
+        "id": "7552f0e4-5b5e-4639-9f3d-86058eda1e41",
+        "problemNumber": 9,
+        "title": "Palindrome Number",
+        "url": "https://leetcode.com/problems/palindrome-number/",
+        "currentBucket": 3,
+        "difficulty": "Easy",
+        "tags": [
+          "Math"
+        ],
+        "createdAt": "2026-09-29T16:00:00.000Z",
+        "updatedAt": "2026-10-01T16:00:00.000Z",
+        "initialAttemptAt": "2026-09-29T16:00:00.000Z",
+        "lastReviewedAt": "2026-10-01T16:00:00.000Z",
+        "nextReviewDueDate": "2026-10-11",
+        "lastSchedulingTimeZone": "America/Toronto",
+        "reviewHistory": [
+          {
+            "id": "504508fd-a4c7-4738-9dad-934cce60c020",
+            "eventType": "initial_attempt",
+            "occurredAt": "2026-09-29T16:00:00.000Z",
+            "outcome": "could_not_solve",
+            "previousBucket": null,
+            "newBucket": 1,
+            "intervalDaysApplied": 2,
+            "nextReviewDueDate": "2026-10-01"
+          },
+          {
+            "id": "41712d69-fd7f-402f-a3e5-79ab8f7efa4c",
+            "eventType": "review",
+            "occurredAt": "2026-10-01T16:00:00.000Z",
+            "outcome": "solved",
+            "previousBucket": 1,
+            "newBucket": 3,
+            "intervalDaysApplied": 10,
+            "nextReviewDueDate": "2026-10-11"
+          }
+        ]
+      },
+      {
+        "schemaVersion": 1,
+        "id": "af95820e-bab4-41c9-b60d-1217696bba42",
+        "problemNumber": 121,
+        "title": "Best Time to Buy and Sell Stock",
+        "url": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock/",
+        "currentBucket": 1,
+        "difficulty": "Easy",
+        "tags": [
+          "Array",
+          "Dynamic Programming"
+        ],
+        "createdAt": "2026-10-04T16:00:00.000Z",
+        "updatedAt": "2026-10-08T16:00:00.000Z",
+        "initialAttemptAt": "2026-10-04T16:00:00.000Z",
+        "lastReviewedAt": "2026-10-08T16:00:00.000Z",
+        "nextReviewDueDate": "2026-10-10",
+        "lastSchedulingTimeZone": "America/Toronto",
+        "reviewHistory": [
+          {
+            "id": "95087a0a-1438-4255-a10a-0bc48f5ac271",
+            "eventType": "initial_attempt",
+            "occurredAt": "2026-10-04T16:00:00.000Z",
+            "outcome": "solved_with_help",
+            "previousBucket": null,
+            "newBucket": 2,
+            "intervalDaysApplied": 4,
+            "nextReviewDueDate": "2026-10-08"
+          },
+          {
+            "id": "fba4b74b-4981-4da3-867e-200a01714cf1",
+            "eventType": "review",
+            "occurredAt": "2026-10-08T16:00:00.000Z",
+            "outcome": "could_not_solve",
+            "previousBucket": 2,
+            "newBucket": 1,
+            "intervalDaysApplied": 2,
+            "nextReviewDueDate": "2026-10-10"
+          }
+        ]
+      },
+      {
+        "schemaVersion": 1,
+        "id": "527bcdb8-42b5-45d2-b737-755803dc0fbd",
+        "problemNumber": 100,
+        "title": "Same Tree",
+        "url": "https://leetcode.com/problems/same-tree/",
+        "currentBucket": 2,
+        "difficulty": "Easy",
+        "tags": [
+          "Tree",
+          "Depth-First Search"
+        ],
+        "createdAt": "2026-09-27T16:00:00.000Z",
+        "updatedAt": "2026-10-07T16:00:00.000Z",
+        "initialAttemptAt": "2026-09-27T16:00:00.000Z",
+        "lastReviewedAt": "2026-10-07T16:00:00.000Z",
+        "nextReviewDueDate": "2026-10-11",
+        "lastSchedulingTimeZone": "America/Toronto",
+        "reviewHistory": [
+          {
+            "id": "9d6fc2f4-8b89-484a-95be-797589f20839",
+            "eventType": "initial_attempt",
+            "occurredAt": "2026-09-27T16:00:00.000Z",
+            "outcome": "solved",
+            "previousBucket": null,
+            "newBucket": 3,
+            "intervalDaysApplied": 10,
+            "nextReviewDueDate": "2026-10-07"
+          },
+          {
+            "id": "c0ad96e4-9927-40bb-a675-2e286cd7388d",
+            "eventType": "review",
+            "occurredAt": "2026-10-07T16:00:00.000Z",
+            "outcome": "solved_with_help",
+            "previousBucket": 3,
+            "newBucket": 2,
+            "intervalDaysApplied": 4,
+            "nextReviewDueDate": "2026-10-11"
+          }
+        ]
+      },
+      {
+        "schemaVersion": 1,
+        "id": "0487cba5-d917-4ad3-b0df-0c8d5c71d687",
+        "problemNumber": 53,
+        "title": "Maximum Subarray",
+        "url": "https://leetcode.com/problems/maximum-subarray/",
+        "currentBucket": 3,
+        "difficulty": "Medium",
+        "tags": [
+          "Dynamic Programming",
+          "Array"
+        ],
+        "createdAt": "2026-09-30T16:00:00.000Z",
+        "updatedAt": "2026-10-02T16:00:00.000Z",
+        "initialAttemptAt": "2026-09-30T16:00:00.000Z",
+        "lastReviewedAt": "2026-10-02T16:00:00.000Z",
+        "nextReviewDueDate": "2026-10-12",
+        "lastSchedulingTimeZone": "America/Toronto",
+        "reviewHistory": [
+          {
+            "id": "db1fa7e3-7b6f-4315-9fa5-30b2414b37f0",
+            "eventType": "initial_attempt",
+            "occurredAt": "2026-09-30T16:00:00.000Z",
+            "outcome": "could_not_solve",
+            "previousBucket": null,
+            "newBucket": 1,
+            "intervalDaysApplied": 2,
+            "nextReviewDueDate": "2026-10-02"
+          },
+          {
+            "id": "a57e3973-4066-46a8-87c3-5ded830cc64b",
+            "eventType": "review",
+            "occurredAt": "2026-10-02T16:00:00.000Z",
+            "outcome": "solved",
+            "previousBucket": 1,
+            "newBucket": 3,
+            "intervalDaysApplied": 10,
+            "nextReviewDueDate": "2026-10-12"
+          }
+        ]
+      },
+      {
+        "schemaVersion": 1,
+        "id": "86819923-209f-485e-aec7-846ddbb1f855",
+        "problemNumber": 49,
+        "title": "Group Anagrams",
+        "url": "https://leetcode.com/problems/group-anagrams/",
+        "currentBucket": 1,
+        "difficulty": "Medium",
+        "tags": [
+          "Hash Table",
+          "String"
+        ],
+        "createdAt": "2026-10-05T16:00:00.000Z",
+        "updatedAt": "2026-10-09T16:00:00.000Z",
+        "initialAttemptAt": "2026-10-05T16:00:00.000Z",
+        "lastReviewedAt": "2026-10-09T16:00:00.000Z",
+        "nextReviewDueDate": "2026-10-11",
+        "lastSchedulingTimeZone": "America/Toronto",
+        "reviewHistory": [
+          {
+            "id": "dab99747-2e2a-467f-8cda-f898f3d84f80",
+            "eventType": "initial_attempt",
+            "occurredAt": "2026-10-05T16:00:00.000Z",
+            "outcome": "solved_with_help",
+            "previousBucket": null,
+            "newBucket": 2,
+            "intervalDaysApplied": 4,
+            "nextReviewDueDate": "2026-10-09"
+          },
+          {
+            "id": "8b365e8f-ec72-4079-9f9a-cfdc088a2cf4",
+            "eventType": "review",
+            "occurredAt": "2026-10-09T16:00:00.000Z",
+            "outcome": "could_not_solve",
+            "previousBucket": 2,
+            "newBucket": 1,
+            "intervalDaysApplied": 2,
+            "nextReviewDueDate": "2026-10-11"
+          }
+        ]
+      },
+      {
+        "schemaVersion": 1,
+        "id": "f74e2f68-0e0f-4c13-8551-3cfa31743d8e",
+        "problemNumber": 155,
+        "title": "Min Stack",
+        "url": "https://leetcode.com/problems/min-stack/",
+        "currentBucket": 2,
+        "difficulty": "Medium",
+        "tags": [
+          "Stack",
+          "Design"
+        ],
+        "createdAt": "2026-09-28T16:00:00.000Z",
+        "updatedAt": "2026-10-08T16:00:00.000Z",
+        "initialAttemptAt": "2026-09-28T16:00:00.000Z",
+        "lastReviewedAt": "2026-10-08T16:00:00.000Z",
+        "nextReviewDueDate": "2026-10-12",
+        "lastSchedulingTimeZone": "America/Toronto",
+        "reviewHistory": [
+          {
+            "id": "c14e47f2-9331-48cb-bea6-6cc23b871605",
+            "eventType": "initial_attempt",
+            "occurredAt": "2026-09-28T16:00:00.000Z",
+            "outcome": "solved",
+            "previousBucket": null,
+            "newBucket": 3,
+            "intervalDaysApplied": 10,
+            "nextReviewDueDate": "2026-10-08"
+          },
+          {
+            "id": "23a430f2-c036-4752-a557-694e99819dab",
+            "eventType": "review",
+            "occurredAt": "2026-10-08T16:00:00.000Z",
+            "outcome": "solved_with_help",
+            "previousBucket": 3,
+            "newBucket": 2,
+            "intervalDaysApplied": 4,
+            "nextReviewDueDate": "2026-10-12"
+          }
+        ]
+      },
+      {
+        "schemaVersion": 1,
+        "id": "d55546ba-340e-43d2-b149-bd8ebd4751f2",
+        "problemNumber": 20,
+        "title": "Valid Parentheses",
+        "url": "https://leetcode.com/problems/valid-parentheses/",
+        "currentBucket": 3,
+        "difficulty": "Easy",
+        "tags": [
+          "Stack",
+          "String"
+        ],
+        "createdAt": "2026-09-30T16:00:00.000Z",
+        "updatedAt": "2026-10-02T16:00:00.000Z",
+        "initialAttemptAt": "2026-09-30T16:00:00.000Z",
+        "lastReviewedAt": "2026-10-02T16:00:00.000Z",
+        "nextReviewDueDate": "2026-10-12",
+        "lastSchedulingTimeZone": "America/Toronto",
+        "reviewHistory": [
+          {
+            "id": "6033de07-eb1f-4fa0-87ad-48872e804f26",
+            "eventType": "initial_attempt",
+            "occurredAt": "2026-09-30T16:00:00.000Z",
+            "outcome": "could_not_solve",
+            "previousBucket": null,
+            "newBucket": 1,
+            "intervalDaysApplied": 2,
+            "nextReviewDueDate": "2026-10-02"
+          },
+          {
+            "id": "b49dc018-56dd-470d-8117-2d8493193cee",
+            "eventType": "review",
+            "occurredAt": "2026-10-02T16:00:00.000Z",
+            "outcome": "solved",
+            "previousBucket": 1,
+            "newBucket": 3,
+            "intervalDaysApplied": 10,
+            "nextReviewDueDate": "2026-10-12"
+          }
+        ]
+      },
+      {
+        "schemaVersion": 1,
+        "id": "27868510-7933-4519-adbc-5a78933b0373",
+        "problemNumber": 101,
+        "title": "Symmetric Tree",
+        "url": "https://leetcode.com/problems/symmetric-tree/",
+        "currentBucket": 1,
+        "difficulty": "Easy",
+        "tags": [
+          "Tree",
+          "Breadth-First Search"
+        ],
+        "createdAt": "2026-10-06T16:00:00.000Z",
+        "updatedAt": "2026-10-10T16:00:00.000Z",
+        "initialAttemptAt": "2026-10-06T16:00:00.000Z",
+        "lastReviewedAt": "2026-10-10T16:00:00.000Z",
+        "nextReviewDueDate": "2026-10-12",
+        "lastSchedulingTimeZone": "America/Toronto",
+        "reviewHistory": [
+          {
+            "id": "f6335688-1cd3-4f48-b9c1-a3afefb51c16",
+            "eventType": "initial_attempt",
+            "occurredAt": "2026-10-06T16:00:00.000Z",
+            "outcome": "solved_with_help",
+            "previousBucket": null,
+            "newBucket": 2,
+            "intervalDaysApplied": 4,
+            "nextReviewDueDate": "2026-10-10"
+          },
+          {
+            "id": "7c43cd1d-726e-442b-b661-c4845fd236d3",
+            "eventType": "review",
+            "occurredAt": "2026-10-10T16:00:00.000Z",
+            "outcome": "could_not_solve",
+            "previousBucket": 2,
+            "newBucket": 1,
+            "intervalDaysApplied": 2,
+            "nextReviewDueDate": "2026-10-12"
+          }
+        ]
+      },
+      {
+        "schemaVersion": 1,
+        "id": "4da86be7-b295-4e91-ba1a-099d3c481b92",
+        "problemNumber": 139,
+        "title": "Word Break",
+        "url": "https://leetcode.com/problems/word-break/",
+        "currentBucket": 2,
+        "difficulty": "Medium",
+        "tags": [
+          "Dynamic Programming",
+          "String"
+        ],
+        "createdAt": "2026-09-28T16:00:00.000Z",
+        "updatedAt": "2026-10-08T16:00:00.000Z",
+        "initialAttemptAt": "2026-09-28T16:00:00.000Z",
+        "lastReviewedAt": "2026-10-08T16:00:00.000Z",
+        "nextReviewDueDate": "2026-10-12",
+        "lastSchedulingTimeZone": "America/Toronto",
+        "reviewHistory": [
+          {
+            "id": "3f753f1a-a6ae-43ef-8453-1e696a7b84fc",
+            "eventType": "initial_attempt",
+            "occurredAt": "2026-09-28T16:00:00.000Z",
+            "outcome": "solved",
+            "previousBucket": null,
+            "newBucket": 3,
+            "intervalDaysApplied": 10,
+            "nextReviewDueDate": "2026-10-08"
+          },
+          {
+            "id": "5bbec3a4-04b6-4303-b10c-711517370802",
+            "eventType": "review",
+            "occurredAt": "2026-10-08T16:00:00.000Z",
+            "outcome": "solved_with_help",
+            "previousBucket": 3,
+            "newBucket": 2,
+            "intervalDaysApplied": 4,
+            "nextReviewDueDate": "2026-10-12"
+          }
+        ]
+      },
+      {
+        "schemaVersion": 1,
+        "id": "2130a939-2455-498a-abc4-2d191f2f2cb4",
+        "problemNumber": 70,
+        "title": "Climbing Stairs",
+        "url": "https://leetcode.com/problems/climbing-stairs/",
+        "currentBucket": 3,
+        "difficulty": "Easy",
+        "tags": [
+          "Dynamic Programming"
+        ],
+        "createdAt": "2026-10-01T16:00:00.000Z",
+        "updatedAt": "2026-10-03T16:00:00.000Z",
+        "initialAttemptAt": "2026-10-01T16:00:00.000Z",
+        "lastReviewedAt": "2026-10-03T16:00:00.000Z",
+        "nextReviewDueDate": "2026-10-13",
+        "lastSchedulingTimeZone": "America/Toronto",
+        "reviewHistory": [
+          {
+            "id": "c7c7fbde-fe86-41e6-a7fd-42384e16f933",
+            "eventType": "initial_attempt",
+            "occurredAt": "2026-10-01T16:00:00.000Z",
+            "outcome": "could_not_solve",
+            "previousBucket": null,
+            "newBucket": 1,
+            "intervalDaysApplied": 2,
+            "nextReviewDueDate": "2026-10-03"
+          },
+          {
+            "id": "f64a7fc8-6fc1-472d-af86-1c174249cec2",
+            "eventType": "review",
+            "occurredAt": "2026-10-03T16:00:00.000Z",
+            "outcome": "solved",
+            "previousBucket": 1,
+            "newBucket": 3,
+            "intervalDaysApplied": 10,
+            "nextReviewDueDate": "2026-10-13"
+          }
+        ]
+      },
+      {
+        "schemaVersion": 1,
+        "id": "4bbabb6e-b1f4-4c7c-8345-63653b18e407",
+        "problemNumber": 15,
+        "title": "3Sum",
+        "url": "https://leetcode.com/problems/3sum/",
+        "currentBucket": 1,
+        "difficulty": "Medium",
+        "tags": [
+          "Two Pointers",
+          "Sorting"
+        ],
+        "createdAt": "2026-10-06T16:00:00.000Z",
+        "updatedAt": "2026-10-10T16:00:00.000Z",
+        "initialAttemptAt": "2026-10-06T16:00:00.000Z",
+        "lastReviewedAt": "2026-10-10T16:00:00.000Z",
+        "nextReviewDueDate": "2026-10-12",
+        "lastSchedulingTimeZone": "America/Toronto",
+        "reviewHistory": [
+          {
+            "id": "9a5b53b0-ccdd-478d-bc06-589d1eff4628",
+            "eventType": "initial_attempt",
+            "occurredAt": "2026-10-06T16:00:00.000Z",
+            "outcome": "solved_with_help",
+            "previousBucket": null,
+            "newBucket": 2,
+            "intervalDaysApplied": 4,
+            "nextReviewDueDate": "2026-10-10"
+          },
+          {
+            "id": "2fabe68f-957d-432f-8474-34e2798161ad",
+            "eventType": "review",
+            "occurredAt": "2026-10-10T16:00:00.000Z",
+            "outcome": "could_not_solve",
+            "previousBucket": 2,
+            "newBucket": 1,
+            "intervalDaysApplied": 2,
+            "nextReviewDueDate": "2026-10-12"
+          }
+        ]
+      },
+      {
+        "schemaVersion": 1,
+        "id": "17aee91b-7bd2-446a-bd98-26b2fd175f61",
+        "problemNumber": 56,
+        "title": "Merge Intervals",
+        "url": "https://leetcode.com/problems/merge-intervals/",
+        "currentBucket": 2,
+        "difficulty": "Medium",
+        "tags": [
+          "Sorting",
+          "Array"
+        ],
+        "createdAt": "2026-09-29T16:00:00.000Z",
+        "updatedAt": "2026-10-09T16:00:00.000Z",
+        "initialAttemptAt": "2026-09-29T16:00:00.000Z",
+        "lastReviewedAt": "2026-10-09T16:00:00.000Z",
+        "nextReviewDueDate": "2026-10-13",
+        "lastSchedulingTimeZone": "America/Toronto",
+        "reviewHistory": [
+          {
+            "id": "2703aeb5-6605-4dd6-846b-9581ec1fd834",
+            "eventType": "initial_attempt",
+            "occurredAt": "2026-09-29T16:00:00.000Z",
+            "outcome": "solved",
+            "previousBucket": null,
+            "newBucket": 3,
+            "intervalDaysApplied": 10,
+            "nextReviewDueDate": "2026-10-09"
+          },
+          {
+            "id": "8eeb9a5a-d0fb-4082-84e6-9412a439cd3a",
+            "eventType": "review",
+            "occurredAt": "2026-10-09T16:00:00.000Z",
+            "outcome": "solved_with_help",
+            "previousBucket": 3,
+            "newBucket": 2,
+            "intervalDaysApplied": 4,
+            "nextReviewDueDate": "2026-10-13"
+          }
+        ]
+      },
+      {
+        "schemaVersion": 1,
+        "id": "0ac45e2c-b4d2-4827-9b78-afba7865ea50",
+        "problemNumber": 34,
+        "title": "Find First and Last Position of Element in Sorted Array",
+        "url": "https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/",
+        "currentBucket": 3,
+        "difficulty": "Medium",
+        "tags": [
+          "Binary Search",
+          "Array"
+        ],
+        "createdAt": "2026-10-02T16:00:00.000Z",
+        "updatedAt": "2026-10-04T16:00:00.000Z",
+        "initialAttemptAt": "2026-10-02T16:00:00.000Z",
+        "lastReviewedAt": "2026-10-04T16:00:00.000Z",
+        "nextReviewDueDate": "2026-10-14",
+        "lastSchedulingTimeZone": "America/Toronto",
+        "reviewHistory": [
+          {
+            "id": "f3592200-0fb2-4002-8ee5-53f329659493",
+            "eventType": "initial_attempt",
+            "occurredAt": "2026-10-02T16:00:00.000Z",
+            "outcome": "could_not_solve",
+            "previousBucket": null,
+            "newBucket": 1,
+            "intervalDaysApplied": 2,
+            "nextReviewDueDate": "2026-10-04"
+          },
+          {
+            "id": "9f0c2d15-c0c4-44bb-967a-afd374872a11",
+            "eventType": "review",
+            "occurredAt": "2026-10-04T16:00:00.000Z",
+            "outcome": "solved",
+            "previousBucket": 1,
+            "newBucket": 3,
+            "intervalDaysApplied": 10,
+            "nextReviewDueDate": "2026-10-14"
+          }
+        ]
+      },
+      {
+        "schemaVersion": 1,
+        "id": "31032c84-8447-4b06-9752-5d534814e89d",
+        "problemNumber": 39,
+        "title": "Combination Sum",
+        "url": "https://leetcode.com/problems/combination-sum/",
+        "currentBucket": 1,
+        "difficulty": "Medium",
+        "tags": [
+          "Backtracking",
+          "Array"
+        ],
+        "createdAt": "2026-10-06T16:00:00.000Z",
+        "updatedAt": "2026-10-10T16:00:00.000Z",
+        "initialAttemptAt": "2026-10-06T16:00:00.000Z",
+        "lastReviewedAt": "2026-10-10T16:00:00.000Z",
+        "nextReviewDueDate": "2026-10-12",
+        "lastSchedulingTimeZone": "America/Toronto",
+        "reviewHistory": [
+          {
+            "id": "c729f6f1-b19b-4808-9a5e-8cb2e5c2bb0f",
+            "eventType": "initial_attempt",
+            "occurredAt": "2026-10-06T16:00:00.000Z",
+            "outcome": "solved_with_help",
+            "previousBucket": null,
+            "newBucket": 2,
+            "intervalDaysApplied": 4,
+            "nextReviewDueDate": "2026-10-10"
+          },
+          {
+            "id": "0cc0b03c-b164-4f4e-b7a0-680743d764f9",
+            "eventType": "review",
+            "occurredAt": "2026-10-10T16:00:00.000Z",
+            "outcome": "could_not_solve",
+            "previousBucket": 2,
+            "newBucket": 1,
+            "intervalDaysApplied": 2,
+            "nextReviewDueDate": "2026-10-12"
+          }
+        ]
+      },
+      {
+        "schemaVersion": 1,
+        "id": "c6bd9c36-d326-4efd-8485-2d8c9b73aa79",
+        "problemNumber": 3,
+        "title": "Longest Substring Without Repeating Characters",
+        "url": "https://leetcode.com/problems/longest-substring-without-repeating-characters/",
+        "currentBucket": 2,
+        "difficulty": "Medium",
+        "tags": [
+          "Sliding Window",
+          "String"
+        ],
+        "createdAt": "2026-09-29T16:00:00.000Z",
+        "updatedAt": "2026-10-09T16:00:00.000Z",
+        "initialAttemptAt": "2026-09-29T16:00:00.000Z",
+        "lastReviewedAt": "2026-10-09T16:00:00.000Z",
+        "nextReviewDueDate": "2026-10-13",
+        "lastSchedulingTimeZone": "America/Toronto",
+        "reviewHistory": [
+          {
+            "id": "626ccb36-85da-4799-9b7e-53b3a1b90685",
+            "eventType": "initial_attempt",
+            "occurredAt": "2026-09-29T16:00:00.000Z",
+            "outcome": "solved",
+            "previousBucket": null,
+            "newBucket": 3,
+            "intervalDaysApplied": 10,
+            "nextReviewDueDate": "2026-10-09"
+          },
+          {
+            "id": "4e805e1d-ae77-4e88-8636-e2c41e705a1f",
+            "eventType": "review",
+            "occurredAt": "2026-10-09T16:00:00.000Z",
+            "outcome": "solved_with_help",
+            "previousBucket": 3,
+            "newBucket": 2,
+            "intervalDaysApplied": 4,
+            "nextReviewDueDate": "2026-10-13"
+          }
+        ]
+      },
+      {
+        "schemaVersion": 1,
+        "id": "6e7e1ee5-1ea2-4afb-8e63-f4373f96a20b",
+        "problemNumber": 2,
+        "title": "Add Two Numbers",
+        "url": "https://leetcode.com/problems/add-two-numbers/",
+        "currentBucket": 3,
+        "difficulty": "Medium",
+        "tags": [
+          "Linked List",
+          "Math"
+        ],
+        "createdAt": "2026-10-03T16:00:00.000Z",
+        "updatedAt": "2026-10-05T16:00:00.000Z",
+        "initialAttemptAt": "2026-10-03T16:00:00.000Z",
+        "lastReviewedAt": "2026-10-05T16:00:00.000Z",
+        "nextReviewDueDate": "2026-10-15",
+        "lastSchedulingTimeZone": "America/Toronto",
+        "reviewHistory": [
+          {
+            "id": "fa80b76e-6922-42a6-826f-92dcd7e8317c",
+            "eventType": "initial_attempt",
+            "occurredAt": "2026-10-03T16:00:00.000Z",
+            "outcome": "could_not_solve",
+            "previousBucket": null,
+            "newBucket": 1,
+            "intervalDaysApplied": 2,
+            "nextReviewDueDate": "2026-10-05"
+          },
+          {
+            "id": "023718a9-0834-416d-8d33-4159bb55a2f5",
+            "eventType": "review",
+            "occurredAt": "2026-10-05T16:00:00.000Z",
+            "outcome": "solved",
+            "previousBucket": 1,
+            "newBucket": 3,
+            "intervalDaysApplied": 10,
+            "nextReviewDueDate": "2026-10-15"
+          }
+        ]
+      },
+      {
+        "schemaVersion": 1,
+        "id": "71824861-fc37-4e25-9797-bc139d56ffa8",
+        "problemNumber": 104,
+        "title": "Maximum Depth of Binary Tree",
+        "url": "https://leetcode.com/problems/maximum-depth-of-binary-tree/",
+        "currentBucket": 1,
+        "difficulty": "Easy",
+        "tags": [
+          "Tree",
+          "Depth-First Search"
+        ],
+        "createdAt": "2026-10-07T16:00:00.000Z",
+        "updatedAt": "2026-10-11T16:00:00.000Z",
+        "initialAttemptAt": "2026-10-07T16:00:00.000Z",
+        "lastReviewedAt": "2026-10-11T16:00:00.000Z",
+        "nextReviewDueDate": "2026-10-13",
+        "lastSchedulingTimeZone": "America/Toronto",
+        "reviewHistory": [
+          {
+            "id": "e601850c-bb45-4810-b273-3030d14d4ce0",
+            "eventType": "initial_attempt",
+            "occurredAt": "2026-10-07T16:00:00.000Z",
+            "outcome": "solved_with_help",
+            "previousBucket": null,
+            "newBucket": 2,
+            "intervalDaysApplied": 4,
+            "nextReviewDueDate": "2026-10-11"
+          },
+          {
+            "id": "21ea9864-cc51-4103-afa0-8bb60744afb2",
+            "eventType": "review",
+            "occurredAt": "2026-10-11T16:00:00.000Z",
+            "outcome": "could_not_solve",
+            "previousBucket": 2,
+            "newBucket": 1,
+            "intervalDaysApplied": 2,
+            "nextReviewDueDate": "2026-10-13"
+          }
+        ]
+      },
+      {
+        "schemaVersion": 1,
+        "id": "f1aac305-e7ba-4160-8bc0-f0e9b1f04099",
+        "problemNumber": 141,
+        "title": "Linked List Cycle",
+        "url": "https://leetcode.com/problems/linked-list-cycle/",
+        "currentBucket": 2,
+        "difficulty": "Easy",
+        "tags": [
+          "Linked List",
+          "Two Pointers"
+        ],
+        "createdAt": "2026-09-30T16:00:00.000Z",
+        "updatedAt": "2026-10-10T16:00:00.000Z",
+        "initialAttemptAt": "2026-09-30T16:00:00.000Z",
+        "lastReviewedAt": "2026-10-10T16:00:00.000Z",
+        "nextReviewDueDate": "2026-10-14",
+        "lastSchedulingTimeZone": "America/Toronto",
+        "reviewHistory": [
+          {
+            "id": "cb0bd32e-b5d0-4fcd-bdb6-b40e568c2631",
+            "eventType": "initial_attempt",
+            "occurredAt": "2026-09-30T16:00:00.000Z",
+            "outcome": "solved",
+            "previousBucket": null,
+            "newBucket": 3,
+            "intervalDaysApplied": 10,
+            "nextReviewDueDate": "2026-10-10"
+          },
+          {
+            "id": "42b7d217-ef60-4e3a-8317-27c6756f59f6",
+            "eventType": "review",
+            "occurredAt": "2026-10-10T16:00:00.000Z",
+            "outcome": "solved_with_help",
+            "previousBucket": 3,
+            "newBucket": 2,
+            "intervalDaysApplied": 4,
+            "nextReviewDueDate": "2026-10-14"
+          }
+        ]
+      },
+      {
+        "schemaVersion": 1,
+        "id": "d697f26d-74b2-4c72-bc9e-6126f07ae7d7",
+        "problemNumber": 33,
+        "title": "Search in Rotated Sorted Array",
+        "url": "https://leetcode.com/problems/search-in-rotated-sorted-array/",
+        "currentBucket": 3,
+        "difficulty": "Medium",
+        "tags": [
+          "Binary Search",
+          "Array"
+        ],
+        "createdAt": "2026-10-04T16:00:00.000Z",
+        "updatedAt": "2026-10-06T16:00:00.000Z",
+        "initialAttemptAt": "2026-10-04T16:00:00.000Z",
+        "lastReviewedAt": "2026-10-06T16:00:00.000Z",
+        "nextReviewDueDate": "2026-10-16",
+        "lastSchedulingTimeZone": "America/Toronto",
+        "reviewHistory": [
+          {
+            "id": "19362695-1dd5-4762-8314-786741c0e191",
+            "eventType": "initial_attempt",
+            "occurredAt": "2026-10-04T16:00:00.000Z",
+            "outcome": "could_not_solve",
+            "previousBucket": null,
+            "newBucket": 1,
+            "intervalDaysApplied": 2,
+            "nextReviewDueDate": "2026-10-06"
+          },
+          {
+            "id": "08260cae-b6f2-4771-97be-7dd17c6bb0c6",
+            "eventType": "review",
+            "occurredAt": "2026-10-06T16:00:00.000Z",
+            "outcome": "solved",
+            "previousBucket": 1,
+            "newBucket": 3,
+            "intervalDaysApplied": 10,
+            "nextReviewDueDate": "2026-10-16"
+          }
+        ]
+      },
+      {
+        "schemaVersion": 1,
+        "id": "8f966590-d0c8-414c-a4bf-a8d2255428d0",
+        "problemNumber": 125,
+        "title": "Valid Palindrome",
+        "url": "https://leetcode.com/problems/valid-palindrome/",
+        "currentBucket": 1,
+        "difficulty": "Easy",
+        "tags": [
+          "Two Pointers",
+          "String"
+        ],
+        "createdAt": "2026-10-07T16:00:00.000Z",
+        "updatedAt": "2026-10-11T16:00:00.000Z",
+        "initialAttemptAt": "2026-10-07T16:00:00.000Z",
+        "lastReviewedAt": "2026-10-11T16:00:00.000Z",
+        "nextReviewDueDate": "2026-10-13",
+        "lastSchedulingTimeZone": "America/Toronto",
+        "reviewHistory": [
+          {
+            "id": "e7f98fc4-6412-4e90-97a3-29c64f1384e2",
+            "eventType": "initial_attempt",
+            "occurredAt": "2026-10-07T16:00:00.000Z",
+            "outcome": "solved_with_help",
+            "previousBucket": null,
+            "newBucket": 2,
+            "intervalDaysApplied": 4,
+            "nextReviewDueDate": "2026-10-11"
+          },
+          {
+            "id": "a0e86e48-39ef-4f78-8988-1c3384651b2c",
+            "eventType": "review",
+            "occurredAt": "2026-10-11T16:00:00.000Z",
+            "outcome": "could_not_solve",
+            "previousBucket": 2,
+            "newBucket": 1,
+            "intervalDaysApplied": 2,
+            "nextReviewDueDate": "2026-10-13"
+          }
+        ]
+      },
+      {
+        "schemaVersion": 1,
+        "id": "52dec226-c7fb-447e-b78c-0a1b4f8f86a7",
+        "problemNumber": 55,
+        "title": "Jump Game",
+        "url": "https://leetcode.com/problems/jump-game/",
+        "currentBucket": 2,
+        "difficulty": "Medium",
+        "tags": [
+          "Greedy",
+          "Array"
+        ],
+        "createdAt": "2026-09-30T16:00:00.000Z",
+        "updatedAt": "2026-10-10T16:00:00.000Z",
+        "initialAttemptAt": "2026-09-30T16:00:00.000Z",
+        "lastReviewedAt": "2026-10-10T16:00:00.000Z",
+        "nextReviewDueDate": "2026-10-14",
+        "lastSchedulingTimeZone": "America/Toronto",
+        "reviewHistory": [
+          {
+            "id": "d3d9b7e2-2c61-4207-8674-a42f5e35c534",
+            "eventType": "initial_attempt",
+            "occurredAt": "2026-09-30T16:00:00.000Z",
+            "outcome": "solved",
+            "previousBucket": null,
+            "newBucket": 3,
+            "intervalDaysApplied": 10,
+            "nextReviewDueDate": "2026-10-10"
+          },
+          {
+            "id": "2a8b8a31-2d1e-4e89-95f8-30e368f54d1e",
+            "eventType": "review",
+            "occurredAt": "2026-10-10T16:00:00.000Z",
+            "outcome": "solved_with_help",
+            "previousBucket": 3,
+            "newBucket": 2,
+            "intervalDaysApplied": 4,
+            "nextReviewDueDate": "2026-10-14"
+          }
+        ]
+      },
+      {
+        "schemaVersion": 1,
+        "id": "63bc0589-181d-4e2b-a2a2-5d2b2d582913",
+        "problemNumber": 94,
+        "title": "Binary Tree Inorder Traversal",
+        "url": "https://leetcode.com/problems/binary-tree-inorder-traversal/",
+        "currentBucket": 3,
+        "difficulty": "Easy",
+        "tags": [
+          "Tree",
+          "Stack"
+        ],
+        "createdAt": "2026-10-05T16:00:00.000Z",
+        "updatedAt": "2026-10-07T16:00:00.000Z",
+        "initialAttemptAt": "2026-10-05T16:00:00.000Z",
+        "lastReviewedAt": "2026-10-07T16:00:00.000Z",
+        "nextReviewDueDate": "2026-10-17",
+        "lastSchedulingTimeZone": "America/Toronto",
+        "reviewHistory": [
+          {
+            "id": "9e879a37-8519-408b-8c59-e2fbb85617be",
+            "eventType": "initial_attempt",
+            "occurredAt": "2026-10-05T16:00:00.000Z",
+            "outcome": "could_not_solve",
+            "previousBucket": null,
+            "newBucket": 1,
+            "intervalDaysApplied": 2,
+            "nextReviewDueDate": "2026-10-07"
+          },
+          {
+            "id": "fecbee78-28ff-411a-8082-7d3ccd532d5a",
+            "eventType": "review",
+            "occurredAt": "2026-10-07T16:00:00.000Z",
+            "outcome": "solved",
+            "previousBucket": 1,
+            "newBucket": 3,
+            "intervalDaysApplied": 10,
+            "nextReviewDueDate": "2026-10-17"
+          }
+        ]
+      },
+      {
+        "schemaVersion": 1,
+        "id": "be87bfa5-74c4-4dcd-b493-2d2f8380dccb",
+        "problemNumber": 62,
+        "title": "Unique Paths",
+        "url": "https://leetcode.com/problems/unique-paths/",
+        "currentBucket": 1,
+        "difficulty": "Medium",
+        "tags": [
+          "Dynamic Programming",
+          "Math"
+        ],
+        "createdAt": "2026-10-08T16:00:00.000Z",
+        "updatedAt": "2026-10-12T16:00:00.000Z",
+        "initialAttemptAt": "2026-10-08T16:00:00.000Z",
+        "lastReviewedAt": "2026-10-12T16:00:00.000Z",
+        "nextReviewDueDate": "2026-10-14",
+        "lastSchedulingTimeZone": "America/Toronto",
+        "reviewHistory": [
+          {
+            "id": "898e8189-fb8c-410b-8560-65689952b7af",
+            "eventType": "initial_attempt",
+            "occurredAt": "2026-10-08T16:00:00.000Z",
+            "outcome": "solved_with_help",
+            "previousBucket": null,
+            "newBucket": 2,
+            "intervalDaysApplied": 4,
+            "nextReviewDueDate": "2026-10-12"
+          },
+          {
+            "id": "7af7fe84-2756-4457-a554-9ee55cd60463",
+            "eventType": "review",
+            "occurredAt": "2026-10-12T16:00:00.000Z",
+            "outcome": "could_not_solve",
+            "previousBucket": 2,
+            "newBucket": 1,
+            "intervalDaysApplied": 2,
+            "nextReviewDueDate": "2026-10-14"
+          }
+        ]
+      },
+      {
+        "schemaVersion": 1,
+        "id": "ee41dbd8-2817-411f-aed5-d9d9b38d3bd0",
+        "problemNumber": 146,
+        "title": "LRU Cache",
+        "url": "https://leetcode.com/problems/lru-cache/",
+        "currentBucket": 2,
+        "difficulty": "Medium",
+        "tags": [
+          "Design",
+          "Hash Table"
+        ],
+        "createdAt": "2026-10-01T16:00:00.000Z",
+        "updatedAt": "2026-10-11T16:00:00.000Z",
+        "initialAttemptAt": "2026-10-01T16:00:00.000Z",
+        "lastReviewedAt": "2026-10-11T16:00:00.000Z",
+        "nextReviewDueDate": "2026-10-15",
+        "lastSchedulingTimeZone": "America/Toronto",
+        "reviewHistory": [
+          {
+            "id": "9884a0d0-5363-43eb-b890-abe795cc5080",
+            "eventType": "initial_attempt",
+            "occurredAt": "2026-10-01T16:00:00.000Z",
+            "outcome": "solved",
+            "previousBucket": null,
+            "newBucket": 3,
+            "intervalDaysApplied": 10,
+            "nextReviewDueDate": "2026-10-11"
+          },
+          {
+            "id": "4d5fe083-c4aa-4f64-8e86-db8b761a2e13",
+            "eventType": "review",
+            "occurredAt": "2026-10-11T16:00:00.000Z",
+            "outcome": "solved_with_help",
+            "previousBucket": 3,
+            "newBucket": 2,
+            "intervalDaysApplied": 4,
+            "nextReviewDueDate": "2026-10-15"
+          }
+        ]
+      },
+      {
+        "schemaVersion": 1,
+        "id": "5f8212dd-f7be-4eb2-b9bf-45abbd980eef",
+        "problemNumber": 22,
+        "title": "Generate Parentheses",
+        "url": "https://leetcode.com/problems/generate-parentheses/",
+        "currentBucket": 3,
+        "difficulty": "Medium",
+        "tags": [
+          "Backtracking",
+          "String"
+        ],
+        "createdAt": "2026-10-07T16:00:00.000Z",
+        "updatedAt": "2026-10-09T16:00:00.000Z",
+        "initialAttemptAt": "2026-10-07T16:00:00.000Z",
+        "lastReviewedAt": "2026-10-09T16:00:00.000Z",
+        "nextReviewDueDate": "2026-10-19",
+        "lastSchedulingTimeZone": "America/Toronto",
+        "reviewHistory": [
+          {
+            "id": "02a4a0e5-6daa-45ac-bdd8-f91ee6f56342",
+            "eventType": "initial_attempt",
+            "occurredAt": "2026-10-07T16:00:00.000Z",
+            "outcome": "could_not_solve",
+            "previousBucket": null,
+            "newBucket": 1,
+            "intervalDaysApplied": 2,
+            "nextReviewDueDate": "2026-10-09"
+          },
+          {
+            "id": "02378a7a-52cd-4937-b1ff-451f6d6432e0",
+            "eventType": "review",
+            "occurredAt": "2026-10-09T16:00:00.000Z",
+            "outcome": "solved",
+            "previousBucket": 1,
+            "newBucket": 3,
+            "intervalDaysApplied": 10,
+            "nextReviewDueDate": "2026-10-19"
+          }
+        ]
+      },
+      {
+        "schemaVersion": 1,
+        "id": "c3659e69-e563-4624-9888-fcc2a5acfa9f",
+        "problemNumber": 1,
+        "title": "Two Sum",
+        "url": "https://leetcode.com/problems/two-sum/",
+        "currentBucket": 1,
+        "difficulty": "Easy",
+        "tags": [
+          "Array",
+          "Hash Table"
+        ],
+        "createdAt": "2026-10-08T16:00:00.000Z",
+        "updatedAt": "2026-10-12T16:00:00.000Z",
+        "initialAttemptAt": "2026-10-08T16:00:00.000Z",
+        "lastReviewedAt": "2026-10-12T16:00:00.000Z",
+        "nextReviewDueDate": "2026-10-14",
+        "lastSchedulingTimeZone": "America/Toronto",
+        "reviewHistory": [
+          {
+            "id": "be9b0072-5e2d-4c4c-bc23-8f4773d81751",
+            "eventType": "initial_attempt",
+            "occurredAt": "2026-10-08T16:00:00.000Z",
+            "outcome": "solved_with_help",
+            "previousBucket": null,
+            "newBucket": 2,
+            "intervalDaysApplied": 4,
+            "nextReviewDueDate": "2026-10-12"
+          },
+          {
+            "id": "b1d5d1b6-d119-403d-b1ee-93de3b954b0e",
+            "eventType": "review",
+            "occurredAt": "2026-10-12T16:00:00.000Z",
+            "outcome": "could_not_solve",
+            "previousBucket": 2,
+            "newBucket": 1,
+            "intervalDaysApplied": 2,
+            "nextReviewDueDate": "2026-10-14"
+          }
+        ]
+      },
+      {
+        "schemaVersion": 1,
+        "id": "e0ea8d50-20a0-44b5-95f9-7af2b4d0768d",
+        "problemNumber": 21,
+        "title": "Merge Two Sorted Lists",
+        "url": "https://leetcode.com/problems/merge-two-sorted-lists/",
+        "currentBucket": 2,
+        "difficulty": "Easy",
+        "tags": [
+          "Linked List",
+          "Recursion"
+        ],
+        "createdAt": "2026-10-02T16:00:00.000Z",
+        "updatedAt": "2026-10-12T16:00:00.000Z",
+        "initialAttemptAt": "2026-10-02T16:00:00.000Z",
+        "lastReviewedAt": "2026-10-12T16:00:00.000Z",
+        "nextReviewDueDate": "2026-10-16",
+        "lastSchedulingTimeZone": "America/Toronto",
+        "reviewHistory": [
+          {
+            "id": "5d5efdb2-24a5-4b6d-9e10-ddb779efa550",
+            "eventType": "initial_attempt",
+            "occurredAt": "2026-10-02T16:00:00.000Z",
+            "outcome": "solved",
+            "previousBucket": null,
+            "newBucket": 3,
+            "intervalDaysApplied": 10,
+            "nextReviewDueDate": "2026-10-12"
+          },
+          {
+            "id": "c942bf32-5bbd-410a-bd19-c9aac29f1714",
+            "eventType": "review",
+            "occurredAt": "2026-10-12T16:00:00.000Z",
+            "outcome": "solved_with_help",
+            "previousBucket": 3,
+            "newBucket": 2,
+            "intervalDaysApplied": 4,
+            "nextReviewDueDate": "2026-10-16"
+          }
+        ]
+      },
+      {
+        "schemaVersion": 1,
+        "id": "d29e8b9d-3b2d-461d-92ce-81281db00979",
+        "problemNumber": 11,
+        "title": "Container With Most Water",
+        "url": "https://leetcode.com/problems/container-with-most-water/",
+        "currentBucket": 3,
+        "difficulty": "Medium",
+        "tags": [
+          "Two Pointers",
+          "Array"
+        ],
+        "createdAt": "2026-10-09T16:00:00.000Z",
+        "updatedAt": "2026-10-11T16:00:00.000Z",
+        "initialAttemptAt": "2026-10-09T16:00:00.000Z",
+        "lastReviewedAt": "2026-10-11T16:00:00.000Z",
+        "nextReviewDueDate": "2026-10-21",
+        "lastSchedulingTimeZone": "America/Toronto",
+        "reviewHistory": [
+          {
+            "id": "8ed77038-d307-4784-9c5b-9f5f89fbf8b1",
+            "eventType": "initial_attempt",
+            "occurredAt": "2026-10-09T16:00:00.000Z",
+            "outcome": "could_not_solve",
+            "previousBucket": null,
+            "newBucket": 1,
+            "intervalDaysApplied": 2,
+            "nextReviewDueDate": "2026-10-11"
+          },
+          {
+            "id": "46ab4408-01be-49ad-b3b4-675c43a6030d",
+            "eventType": "review",
+            "occurredAt": "2026-10-11T16:00:00.000Z",
+            "outcome": "solved",
+            "previousBucket": 1,
+            "newBucket": 3,
+            "intervalDaysApplied": 10,
+            "nextReviewDueDate": "2026-10-21"
+          }
+        ]
+      },
+      {
+        "schemaVersion": 1,
+        "id": "936f962c-82f7-41b4-96ac-6f30ab601e97",
+        "problemNumber": 42,
+        "title": "Trapping Rain Water",
+        "url": "https://leetcode.com/problems/trapping-rain-water/",
+        "currentBucket": 1,
+        "difficulty": "Hard",
+        "tags": [
+          "Two Pointers",
+          "Stack"
+        ],
+        "createdAt": "2026-10-08T16:00:00.000Z",
+        "updatedAt": "2026-10-12T16:00:00.000Z",
+        "initialAttemptAt": "2026-10-08T16:00:00.000Z",
+        "lastReviewedAt": "2026-10-12T16:00:00.000Z",
+        "nextReviewDueDate": "2026-10-14",
+        "lastSchedulingTimeZone": "America/Toronto",
+        "reviewHistory": [
+          {
+            "id": "d50defee-8b9a-46e6-9220-b839109ac333",
+            "eventType": "initial_attempt",
+            "occurredAt": "2026-10-08T16:00:00.000Z",
+            "outcome": "solved_with_help",
+            "previousBucket": null,
+            "newBucket": 2,
+            "intervalDaysApplied": 4,
+            "nextReviewDueDate": "2026-10-12"
+          },
+          {
+            "id": "764cd76b-3495-4aec-b3b3-5cf08fd2b02f",
+            "eventType": "review",
+            "occurredAt": "2026-10-12T16:00:00.000Z",
+            "outcome": "could_not_solve",
+            "previousBucket": 2,
+            "newBucket": 1,
+            "intervalDaysApplied": 2,
+            "nextReviewDueDate": "2026-10-14"
+          }
+        ]
+      },
+      {
+        "schemaVersion": 1,
+        "id": "eb1f287c-bfc1-4663-94e6-d1e6081266ae",
+        "problemNumber": 4,
+        "title": "Median of Two Sorted Arrays",
+        "url": "https://leetcode.com/problems/median-of-two-sorted-arrays/",
+        "currentBucket": 2,
+        "difficulty": "Hard",
+        "tags": [
+          "Binary Search",
+          "Array"
+        ],
+        "createdAt": "2026-10-02T16:00:00.000Z",
+        "updatedAt": "2026-10-12T16:00:00.000Z",
+        "initialAttemptAt": "2026-10-02T16:00:00.000Z",
+        "lastReviewedAt": "2026-10-12T16:00:00.000Z",
+        "nextReviewDueDate": "2026-10-16",
+        "lastSchedulingTimeZone": "America/Toronto",
+        "reviewHistory": [
+          {
+            "id": "77a85512-7472-43d6-885d-3cdcccbfbb5e",
+            "eventType": "initial_attempt",
+            "occurredAt": "2026-10-02T16:00:00.000Z",
+            "outcome": "solved",
+            "previousBucket": null,
+            "newBucket": 3,
+            "intervalDaysApplied": 10,
+            "nextReviewDueDate": "2026-10-12"
+          },
+          {
+            "id": "5a64201c-db3b-4b5a-a154-6603468dfee2",
+            "eventType": "review",
+            "occurredAt": "2026-10-12T16:00:00.000Z",
+            "outcome": "solved_with_help",
+            "previousBucket": 3,
+            "newBucket": 2,
+            "intervalDaysApplied": 4,
+            "nextReviewDueDate": "2026-10-16"
+          }
+        ]
+      },
+      {
+        "schemaVersion": 1,
+        "id": "ab138f4c-852c-420c-850f-76779dce4cb3",
+        "problemNumber": 17,
+        "title": "Letter Combinations of a Phone Number",
+        "url": "https://leetcode.com/problems/letter-combinations-of-a-phone-number/",
+        "currentBucket": 3,
+        "difficulty": "Medium",
+        "tags": [
+          "Backtracking",
+          "String"
+        ],
+        "createdAt": "2026-10-10T16:00:00.000Z",
+        "updatedAt": "2026-10-12T16:00:00.000Z",
+        "initialAttemptAt": "2026-10-10T16:00:00.000Z",
+        "lastReviewedAt": "2026-10-12T16:00:00.000Z",
+        "nextReviewDueDate": "2026-10-22",
+        "lastSchedulingTimeZone": "America/Toronto",
+        "reviewHistory": [
+          {
+            "id": "a9be1af3-ba1d-41e6-9290-a1a612cdf8a7",
+            "eventType": "initial_attempt",
+            "occurredAt": "2026-10-10T16:00:00.000Z",
+            "outcome": "could_not_solve",
+            "previousBucket": null,
+            "newBucket": 1,
+            "intervalDaysApplied": 2,
+            "nextReviewDueDate": "2026-10-12"
+          },
+          {
+            "id": "4037750e-9e3c-4c89-81fe-48290ac056ed",
+            "eventType": "review",
+            "occurredAt": "2026-10-12T16:00:00.000Z",
+            "outcome": "solved",
+            "previousBucket": 1,
+            "newBucket": 3,
+            "intervalDaysApplied": 10,
+            "nextReviewDueDate": "2026-10-22"
+          }
+        ]
+      }
+    ],
+    "settings": {
+      "intervals": {
+        "1": 2,
+        "2": 4,
+        "3": 10
+      },
+      "sorts": {
+        "1": "due",
+        "2": "due",
+        "3": "due"
+      }
+    }
+  }
+}
