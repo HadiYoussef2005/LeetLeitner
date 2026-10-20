@@ -42,6 +42,8 @@ try {
   );
   await source.dragTo(page.locator(".bucket.green .bucket-header"));
   await expect(page.getByRole("status")).toContainText("Moved");
+  await expect(page.locator(".drag-preview")).toHaveCount(0);
+  await expect(page.locator(".landing")).toHaveCount(0);
   const after = (await data()).problems.find((p) => p.id === before.id);
   assert.equal(after.currentBucket, 3);
   assert.equal(after.lastReviewedAt, before.lastReviewedAt);
@@ -60,11 +62,9 @@ try {
     (await data()).problems.find((p) => p.id === before.id).currentBucket,
     3,
   );
-  const card = page
-    .locator(".problem-card")
-    .filter({
-      has: page.getByRole("heading", { name: before.title, exact: true }),
-    });
+  const card = page.locator(".problem-card").filter({
+    has: page.getByRole("heading", { name: before.title, exact: true }),
+  });
   await card.dragTo(page.locator(".bucket.green .bucket-header"));
   assert.deepEqual(
     (await data()).problems.find((p) => p.id === before.id),
@@ -73,7 +73,17 @@ try {
   );
   const transfer = await page.evaluateHandle(() => new DataTransfer());
   await card.dispatchEvent("dragstart", { dataTransfer: transfer });
+  await expect(page.locator(".drag-preview")).toHaveCount(1);
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  assert.equal(
+    await page
+      .locator(".drag-preview")
+      .evaluate((el) => getComputedStyle(el).transform),
+    "none",
+  );
   await card.dispatchEvent("dragend");
+  await expect(page.locator(".drag-preview")).toHaveCount(0);
+  await page.emulateMedia({ reducedMotion: "no-preference" });
   assert.deepEqual(
     (await data()).problems.find((p) => p.id === before.id),
     after,
@@ -93,6 +103,7 @@ try {
   });
   await card.dragTo(page.locator(".bucket.amber .bucket-header"));
   await expect(page.getByRole("alert")).toContainText("Could not save");
+  await expect(page.locator(".landing, .drag-preview")).toHaveCount(0);
   assert.deepEqual(
     (await data()).problems.find((p) => p.id === before.id),
     after,

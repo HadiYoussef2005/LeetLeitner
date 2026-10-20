@@ -165,7 +165,17 @@ export default function App() {
   const draggedId = useRef<string | null>(null);
   const [dragging, setDragging] = useState<string | null>(null);
   const [dropBucket, setDropBucket] = useState<Bucket | null>(null);
+  const [landedId, setLandedId] = useState<string | null>(null);
+  const dragPreview = useRef<HTMLElement | null>(null);
+  useEffect(() => {
+    if (!landedId) return;
+    const timer = window.setTimeout(() => setLandedId(null), 400);
+    return () => window.clearTimeout(timer);
+  }, [landedId]);
+  useEffect(() => () => dragPreview.current?.remove(), []);
   function endDrag() {
+    dragPreview.current?.remove();
+    dragPreview.current = null;
     draggedId.current = null;
     setDragging(null);
     setDropBucket(null);
@@ -191,6 +201,7 @@ export default function App() {
       )
     ) {
       setPages((previous) => ({ ...previous, [bucket]: 0 }));
+      setLandedId(problem.id);
     }
   }
   const snapshotRef = useRef<Snapshot>(initial.snapshot);
@@ -669,6 +680,7 @@ export default function App() {
                                 onClick={() => setDetail(p)}
                                 draggable={!locked}
                                 dragging={dragging === p.id}
+                                landing={landedId === p.id}
                                 onDragStart={(e) => {
                                   if (locked) {
                                     e.preventDefault();
@@ -677,6 +689,25 @@ export default function App() {
                                   draggedId.current = p.id;
                                   e.dataTransfer.effectAllowed = "move";
                                   e.dataTransfer.setData("text/plain", p.id);
+                                  setLandedId(null);
+                                  dragPreview.current?.remove();
+                                  const card = e.currentTarget;
+                                  const bounds = card.getBoundingClientRect();
+                                  const preview = card.cloneNode(
+                                    true,
+                                  ) as HTMLElement;
+                                  preview.className =
+                                    "problem-card drag-preview";
+                                  preview.setAttribute("aria-hidden", "true");
+                                  preview.tabIndex = -1;
+                                  preview.style.width = `${bounds.width}px`;
+                                  document.body.appendChild(preview);
+                                  dragPreview.current = preview;
+                                  e.dataTransfer.setDragImage(
+                                    preview,
+                                    e.clientX - bounds.left,
+                                    e.clientY - bounds.top,
+                                  );
                                   setDragging(p.id);
                                 }}
                                 onDragEnd={endDrag}
@@ -1221,6 +1252,7 @@ function ProblemCard({
   onClick,
   draggable,
   dragging,
+  landing,
   onDragStart,
   onDragEnd,
 }: {
@@ -1229,12 +1261,13 @@ function ProblemCard({
   onClick: () => void;
   draggable: boolean;
   dragging: boolean;
+  landing: boolean;
   onDragStart: React.DragEventHandler<HTMLButtonElement>;
   onDragEnd: () => void;
 }) {
   return (
     <button
-      className={`problem-card${dragging ? " dragging" : ""}`}
+      className={`problem-card${dragging ? " dragging" : ""}${landing ? " landing" : ""}`}
       onClick={onClick}
       draggable={draggable}
       onDragStart={onDragStart}
