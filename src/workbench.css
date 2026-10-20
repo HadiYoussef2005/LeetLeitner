@@ -1096,19 +1096,29 @@ progress {
 .main-content::before {
   content: "";
   position: absolute;
-  left: -13px;
-  top: 25px;
-  bottom: 25px;
-  width: 31px;
-  background: radial-gradient(
-      ellipse 14px 6px at center,
-      transparent 0 9px,
-      #0e0b08 10px 11px,
-      #aa9786 12px 13px,
-      #27211b 14px,
-      transparent 15px
-    )
-    center top / 31px 42px repeat-y;
+  inset: 0 auto 0 0;
+  width: 18px;
+  border-radius: 3px 0 0 3px;
+  background: linear-gradient(
+    90deg,
+    #24170f,
+    #4a3020 35%,
+    #26180f 82%,
+    #1c120c
+  );
+  border-right: 1px solid #ac82503d;
+  box-shadow:
+    5px 0 9px #170c0740,
+    inset 1px 0 #d8aa6b24;
+  pointer-events: none;
+}
+.main-content::after {
+  content: "";
+  position: absolute;
+  top: 16px;
+  bottom: 16px;
+  left: 7px;
+  border-left: 1px dashed #c397605c;
   pointer-events: none;
 }
 .page-heading {
@@ -1491,9 +1501,10 @@ dialog {
       0 0;
   }
   .main-content::before {
-    left: -9px;
-    width: 19px;
-    background-size: 24px 42px;
+    width: 10px;
+  }
+  .main-content::after {
+    left: 4px;
   }
   h1 {
     font-size: 31px;
