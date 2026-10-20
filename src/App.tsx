@@ -301,6 +301,29 @@ export default function App() {
   return (
     <SaveErrorContext.Provider value={error}>
       <div className="app-shell">
+        <div className="notebook-opening" aria-hidden="true">
+          <div className="notebook-cover">
+            <div className="notebook-cover-front">
+              <span className="cover-edition">A PERSONAL FIELD GUIDE</span>
+              <span className="cover-title">LeetLeitner</span>
+              <span className="cover-subtitle">
+                Problems, patterns & little breakthroughs.
+              </span>
+              <span className="cover-doodle">
+                {"{ think. solve. repeat. }"}
+              </span>
+              <span className="cover-volume">
+                THE PRACTICE NOTEBOOK · VOL. 01
+              </span>
+            </div>
+            <div className="notebook-cover-inside">
+              <span>
+                This notebook belongs to
+                <br />a work in progress.
+              </span>
+            </div>
+          </div>
+        </div>
         <aside className="sidebar">
           <a
             href="#"
