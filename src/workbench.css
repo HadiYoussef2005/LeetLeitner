@@ -1662,3 +1662,37 @@ dialog {
     transition: none;
   }
 }
+/* Paper cards can be reclassified by dropping them onto a bucket. */
+.card-reference {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.card-reference svg {
+  color: #c9ac87;
+}
+.problem-card[draggable="true"] {
+  cursor: grab;
+}
+.problem-card[draggable="true"]:active {
+  cursor: grabbing;
+}
+.problem-card.dragging {
+  opacity: 0.45;
+}
+.bucket.drop-target {
+  outline: 2px dashed #efb779;
+  outline-offset: 5px;
+  background-color: #513c29;
+}
+.bucket.drop-target .bucket-header {
+  background-color: #5c422e;
+}
+.bucket.drop-target .bucket-add {
+  color: #ffe0b4;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .bucket {
+    transition: background-color 140ms ease;
+  }
+}

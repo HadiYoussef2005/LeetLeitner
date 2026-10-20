@@ -25,6 +25,7 @@ import {
   Trash2,
   CalendarDays,
   RotateCcw,
+  GripVertical,
 } from "lucide-react";
 import {
   BUCKETS,
@@ -161,6 +162,37 @@ export default function App() {
   const [notice, setNotice] = useState(""),
     [today, setToday] = useState(localDate());
   const busy = useRef(false);
+  const draggedId = useRef<string | null>(null);
+  const [dragging, setDragging] = useState<string | null>(null);
+  const [dropBucket, setDropBucket] = useState<Bucket | null>(null);
+  function endDrag() {
+    draggedId.current = null;
+    setDragging(null);
+    setDropBucket(null);
+  }
+  function dropProblem(bucket: Bucket) {
+    const problem = store.problems.find((p) => p.id === draggedId.current);
+    endDrag();
+    if (locked || !problem || problem.currentBucket === bucket) return;
+    const next = schedule(
+      problem,
+      bucket,
+      store.settings,
+      "reclassification",
+      null,
+    );
+    if (
+      commit(
+        {
+          ...store,
+          problems: store.problems.map((p) => (p.id === problem.id ? next : p)),
+        },
+        `Moved ${problem.title} to ${BUCKETS[bucket].name}. Next review ${labelDate(next.nextReviewDueDate)}.`,
+      )
+    ) {
+      setPages((previous) => ({ ...previous, [bucket]: 0 }));
+    }
+  }
   const snapshotRef = useRef<Snapshot>(initial.snapshot);
   useEffect(() => {
     const tick = () => setToday(localDate());
@@ -494,7 +526,7 @@ export default function App() {
                 </h2>
                 <span>
                   {view === "dashboard"
-                    ? "Sorted by the outcome of your last attempt."
+                    ? "Drag problems between buckets to restart their review schedule."
                     : "Oldest due first, with weaker buckets prioritized."}
                 </span>
               </div>
@@ -529,8 +561,38 @@ export default function App() {
                     );
                   return (
                     <section
-                      className={`bucket ${definition.color}`}
+                      className={`bucket ${definition.color}${dropBucket === bucket ? " drop-target" : ""}${dragging ? " drag-active" : ""}`}
                       key={bucket}
+                      onDragOver={(e) => {
+                        const source = store.problems.find(
+                          (p) => p.id === draggedId.current,
+                        );
+                        if (
+                          locked ||
+                          !source ||
+                          source.currentBucket === bucket
+                        )
+                          return;
+                        e.preventDefault();
+                        e.dataTransfer.dropEffect = "move";
+                        setDropBucket(bucket);
+                      }}
+                      onDragLeave={(e) => {
+                        if (
+                          !e.currentTarget.contains(
+                            e.relatedTarget as Node | null,
+                          )
+                        ) {
+                          setDropBucket((previous) =>
+                            previous === bucket ? null : previous,
+                          );
+                        }
+                      }}
+                      onDrop={(e) => {
+                        if (!draggedId.current) return;
+                        e.preventDefault();
+                        dropProblem(bucket);
+                      }}
                     >
                       <div className="bucket-header">
                         <div>
@@ -605,6 +667,19 @@ export default function App() {
                                 p={p}
                                 today={today}
                                 onClick={() => setDetail(p)}
+                                draggable={!locked}
+                                dragging={dragging === p.id}
+                                onDragStart={(e) => {
+                                  if (locked) {
+                                    e.preventDefault();
+                                    return;
+                                  }
+                                  draggedId.current = p.id;
+                                  e.dataTransfer.effectAllowed = "move";
+                                  e.dataTransfer.setData("text/plain", p.id);
+                                  setDragging(p.id);
+                                }}
+                                onDragEnd={endDrag}
                               />
                             ))
                         ) : (
@@ -1144,15 +1219,32 @@ function ProblemCard({
   p,
   today,
   onClick,
+  draggable,
+  dragging,
+  onDragStart,
+  onDragEnd,
 }: {
   p: Problem;
   today: string;
   onClick: () => void;
+  draggable: boolean;
+  dragging: boolean;
+  onDragStart: React.DragEventHandler<HTMLButtonElement>;
+  onDragEnd: () => void;
 }) {
   return (
-    <button className="problem-card" onClick={onClick}>
+    <button
+      className={`problem-card${dragging ? " dragging" : ""}`}
+      onClick={onClick}
+      draggable={draggable}
+      onDragStart={onDragStart}
+      onDragEnd={onDragEnd}
+      title="Drag to another bucket, or click to edit"
+    >
       <div className="card-top">
-        <span>#{p.problemNumber}</span>
+        <span className="card-reference">
+          <GripVertical size={14} aria-hidden="true" />#{p.problemNumber}
+        </span>
         <span className={`difficulty ${p.difficulty.toLowerCase()}`}>
           {p.difficulty}
         </span>

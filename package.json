@@ -14,7 +14,8 @@
     "test:portability": "node scripts/portability-check.mjs",
     "prebuild": "node scripts/clean-build.mjs",
     "test:hosting": "node scripts/hosting-check.mjs",
-    "test:link-input": "node scripts/link-input-check.mjs"
+    "test:link-input": "node scripts/link-input-check.mjs",
+    "test:drag-drop": "node scripts/drag-drop-check.mjs"
   },
   "dependencies": {
     "lucide-react": "^0.468.0",

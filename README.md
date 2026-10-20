@@ -40,6 +40,10 @@ npm run test:link-input
 
 ## Rules
 
+Drag a problem card onto another bucket to correct its classification. The destination highlights while dragging. A move restarts its review schedule from today using the destination bucket's interval, records a reclassification, and does not count as a completed review. Dropping in the same bucket or canceling leaves it unchanged. On touch devices or with a keyboard, open the problem and use **Correct bucket** instead.
+
+With the preview running on port 4173, run `npm run test:drag-drop` to verify movement, persistence, scheduling, canceled drops, and storage failures.
+
 - Couldn't Solve → Bucket 1, default 2 days (configurable 1–2).
 - Solved with Help → Bucket 2, default 4 days (configurable 3–4).
 - Solved independently → Bucket 3, default 10 days (configurable 7–14).
