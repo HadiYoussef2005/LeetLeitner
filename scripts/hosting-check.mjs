@@ -63,7 +63,7 @@ try {
   });
   await page.goto(origin + "/leetleitner");
   assert.equal(new URL(page.url()).pathname, base);
-  await page.getByRole("heading", { name: "Practice that sticks." }).waitFor();
+  await page.getByRole("heading", { name: "Problem notebook" }).waitFor();
   await page.evaluate(async () => {
     await navigator.serviceWorker.ready;
   });
@@ -94,7 +94,7 @@ try {
   assert.equal(await page.locator(".problem-card").count(), 36);
   await context.setOffline(true);
   await page.reload();
-  await page.getByRole("heading", { name: "Practice that sticks." }).waitFor();
+  await page.getByRole("heading", { name: "Problem notebook" }).waitFor();
   assert.equal(await page.locator(".problem-card").count(), 36);
   // Import worker validation through the portfolio URL also works offline.
   await page.getByRole("button", { name: "Preferences", exact: true }).click();
@@ -117,7 +117,7 @@ try {
     true,
   );
   assert.equal(
-    await page.getByRole("heading", { name: "Practice that sticks." }).count(),
+    await page.getByRole("heading", { name: "Problem notebook" }).count(),
     0,
   );
   assert.deepEqual(errors, []);

@@ -3,6 +3,10 @@
   "framework": null,
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
+  "functions": { "api/problem.ts": { "maxDuration": 25 } },
+  "rewrites": [
+    { "source": "/leetleitner/api/problem.json", "destination": "/api/problem" }
+  ],
   "redirects": [
     {
       "source": "/",

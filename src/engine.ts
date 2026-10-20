@@ -7,7 +7,7 @@ export const BUCKETS = {
     outcome: "could_not_solve",
     min: 1,
     max: 2,
-    description: "Build the foundation",
+    description: "Needs another attempt",
     color: "red",
   },
   2: {
@@ -15,7 +15,7 @@ export const BUCKETS = {
     outcome: "solved_with_help",
     min: 3,
     max: 4,
-    description: "Connect the dots",
+    description: "Rebuild without hints",
     color: "amber",
   },
   3: {
@@ -23,7 +23,7 @@ export const BUCKETS = {
     outcome: "solved",
     min: 7,
     max: 14,
-    description: "Keep it sharp",
+    description: "Independent solution",
     color: "green",
   },
 } as const;

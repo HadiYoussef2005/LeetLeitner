@@ -18,6 +18,9 @@ const data = () =>
   );
 const add = async (number, title, outcome = "Solved") => {
   await page.getByRole("button", { name: "Add problem", exact: true }).click();
+  await page
+    .getByRole("button", { name: "Enter manually", exact: true })
+    .click();
   await page.getByLabel("Problem number", { exact: true }).fill(String(number));
   await page.getByLabel("Title", { exact: true }).fill(title);
   await page
@@ -54,6 +57,9 @@ try {
   await page.reload();
   assert.equal((await data()).problems.length, 3);
   await page.getByRole("button", { name: "Add problem", exact: true }).click();
+  await page
+    .getByRole("button", { name: "Enter manually", exact: true })
+    .click();
   await page.getByLabel("Problem number", { exact: true }).fill("1");
   await page.getByRole("button", { name: "Open existing problem" }).click();
   await page
@@ -149,7 +155,7 @@ try {
   await page.waitForFunction(() => navigator.serviceWorker.controller !== null);
   await context.setOffline(true);
   await page.reload();
-  await page.getByRole("heading", { name: "Practice that sticks." }).waitFor();
+  await page.getByRole("heading", { name: "Problem notebook" }).waitFor();
   assert.equal((await data()).problems.length, 3);
   await context.setOffline(false);
   // Storage failure must not mutate the visible or persisted record.
@@ -160,6 +166,9 @@ try {
     };
   });
   await page.getByRole("button", { name: "Add problem", exact: true }).click();
+  await page
+    .getByRole("button", { name: "Enter manually", exact: true })
+    .click();
   await page.getByLabel("Problem number", { exact: true }).fill("9");
   await page.getByLabel("Title", { exact: true }).fill("Storage failure");
   await page
