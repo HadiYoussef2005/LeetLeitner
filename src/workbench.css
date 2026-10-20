@@ -2,12 +2,12 @@
    Shared form/layout primitives live in style.css. */
 :root {
   font-family: "IBM Plex Sans", system-ui, sans-serif;
-  background: #131615;
+  background: #181411;
   color: #f0eee7;
   --muted: #a19e96;
-  --border: #343c36;
+  --border: #42382e;
   --accent: #ebbb83;
-  --green: #a8c6ac;
+  --green: #c6b7a8;
   --amber: #e4bc7d;
   --red: #e6a39b;
   --mono: "IBM Plex Mono", Consolas, monospace;
@@ -32,7 +32,7 @@ select:focus-visible {
 }
 .sidebar {
   width: 216px;
-  background: #181d1a;
+  background: #1f1a16;
   padding: 30px 17px;
   border-color: var(--border);
 }
@@ -69,7 +69,7 @@ main {
   height: 13px;
   border: 1.5px solid var(--accent);
   transform: skewY(-12deg);
-  background: #181d1a;
+  background: #1f1a16;
   border-radius: 1px;
   left: 0;
   top: 1px;
@@ -107,7 +107,7 @@ main {
 .nav-count,
 .bucket-count {
   font-family: var(--mono);
-  background: #30302d;
+  background: #362e27;
   border-radius: 6px;
   color: #c3beb4;
 }
@@ -132,7 +132,7 @@ main {
   font-size: 11px;
 }
 .local-note svg {
-  color: #a8a99b;
+  color: #b2a192;
   stroke-width: 1.5;
 }
 .sidebar-foot {
@@ -241,7 +241,7 @@ h1 {
 }
 .stats > div {
   border: 1px solid var(--border);
-  background: #1b201d;
+  background: #231d18;
   border-radius: 12px;
   padding: 20px;
   box-shadow: 0 3px 12px #00000012;
@@ -265,7 +265,7 @@ h1 {
 }
 .stats strong svg {
   width: 17px;
-  color: #767870;
+  color: #887360;
   stroke-width: 1.3;
 }
 .stats .accent,
@@ -279,7 +279,7 @@ h1 {
   line-height: 1.6;
 }
 .review-banner {
-  background: linear-gradient(110deg, #302b22, #222820);
+  background: linear-gradient(110deg, #302b22, #2a241e);
   border: 1px solid #5b5140;
   border-radius: 14px;
   padding: 27px 25px;
@@ -335,7 +335,7 @@ h1 {
 .search {
   border-color: #423f39;
   border-radius: 8px;
-  background: #1a1a19;
+  background: #1e1915;
 }
 .search input {
   font-size: 12px;
@@ -344,12 +344,12 @@ h1 {
 .filters select {
   font-size: 11px;
   border-radius: 8px;
-  background: #1a1a19;
+  background: #1e1915;
   border-color: #423f39;
 }
 input,
 select {
-  background: #20201e;
+  background: #241f1a;
   border-color: #47443e;
   border-radius: 8px;
   color: #e7e0d4;
@@ -364,8 +364,8 @@ input::placeholder {
   gap: 16px;
 }
 .bucket {
-  background: #181d1a;
-  border-color: #343d36;
+  background: #1f1a16;
+  border-color: #42382f;
   border-radius: 12px;
   overflow: hidden;
   min-height: 340px;
@@ -378,7 +378,7 @@ input::placeholder {
 .bucket.red .bucket-header,
 .bucket.amber .bucket-header,
 .bucket.green .bucket-header {
-  background: #1e2520;
+  background: #27211c;
 }
 .bucket-header h3 {
   font-size: 15px;
@@ -426,8 +426,8 @@ input::placeholder {
   padding: 0 11px 8px;
 }
 .problem-card {
-  background: #242b25;
-  border: 1px solid #3b443b;
+  background: #2e2721;
+  border: 1px solid #4a3f35;
   border-radius: 9px;
   padding: 17px 15px 14px;
   margin-bottom: 10px;
@@ -437,7 +437,7 @@ input::placeholder {
     border-color 0.15s;
 }
 .problem-card:hover {
-  background: #2b342c;
+  background: #382f27;
   border-color: #9b7a58;
   transform: none;
 }
@@ -460,8 +460,8 @@ input::placeholder {
   padding: 3px 5px;
 }
 .difficulty.easy {
-  background: #273027;
-  color: #bfd8bc;
+  background: #332b24;
+  color: #d8cabc;
 }
 .difficulty.medium {
   background: #332d22;
@@ -474,8 +474,8 @@ input::placeholder {
 .tags span {
   font-family: var(--mono);
   font-size: 11px;
-  background: #2d352d;
-  border: 1px solid #424b3e;
+  background: #393129;
+  border: 1px solid #504439;
   color: #bfb5a4;
   border-radius: 6px;
   padding: 2px 5px;
@@ -544,7 +544,7 @@ input::placeholder {
 .queue-list {
   border-radius: 6px;
   border-color: #423c32;
-  background: #1a1a19;
+  background: #1e1915;
 }
 .queue-row {
   border-color: #36312b;
@@ -570,7 +570,7 @@ footer {
   margin-top: 27px;
 }
 dialog {
-  background: #1c1c1b;
+  background: #201b17;
   border-color: #5b5143;
   border-radius: 16px;
   padding: 30px;
@@ -950,7 +950,7 @@ progress {
   border-top-color: var(--amber);
 }
 .bucket.green .bucket-header {
-  background: #202b23;
+  background: #2c251f;
   border-top-color: var(--green);
 }
 .bucket.red .bucket-number {
@@ -1039,14 +1039,14 @@ progress {
   --hand: "Segoe Print", "Bradley Hand", cursive;
 }
 .app-shell {
-  background: #101511;
+  background: #16120f;
 }
 .sidebar {
   background:
     repeating-linear-gradient(0deg, #ffffff03 0 1px, transparent 1px 4px),
-    repeating-linear-gradient(90deg, #0002 0 1px, transparent 1px 5px), #1b251e;
+    repeating-linear-gradient(90deg, #0002 0 1px, transparent 1px 5px), #25201b;
   box-shadow: inset -8px 0 15px #0005;
-  border-right: 2px solid #526044;
+  border-right: 2px solid #605244;
 }
 .brand {
   font-family: var(--hand);
@@ -1066,8 +1066,8 @@ progress {
   transform: rotate(-2deg);
 }
 .topbar {
-  border-bottom: 1px dashed #59604a;
-  background: #1b231b;
+  border-bottom: 1px dashed #635547;
+  background: #241f1a;
 }
 .main-content {
   position: relative;
@@ -1075,7 +1075,7 @@ progress {
   margin: 22px 24px 30px 18px;
   max-width: 1450px;
   padding: 45px 30px 30px 64px;
-  background-color: #242d23;
+  background-color: #2f2821;
   background-image:
     linear-gradient(
       90deg,
@@ -1083,14 +1083,14 @@ progress {
       #d38c7259 39px 41px,
       transparent 41px
     ),
-    repeating-linear-gradient(transparent 0 31px, #c6cda719 31px 32px);
-  border: 1px solid #677052;
+    repeating-linear-gradient(transparent 0 31px, #cdb9a719 31px 32px);
+  border: 1px solid #716051;
   border-radius: 4px 18px 22px 4px;
   box-shadow:
-    4px 5px 0 #141c15,
-    6px 7px 0 #687052,
-    9px 10px 0 #161e17,
-    11px 12px 0 #4a543e,
+    4px 5px 0 #1c1814,
+    6px 7px 0 #716051,
+    9px 10px 0 #1e1a16,
+    11px 12px 0 #55493d,
     14px 18px 30px #0006;
 }
 .main-content::before {
@@ -1103,9 +1103,9 @@ progress {
   background: radial-gradient(
       ellipse 14px 6px at center,
       transparent 0 9px,
-      #080e09 10px 11px,
-      #a3aa86 12px 13px,
-      #1c261c 14px,
+      #0e0b08 10px 11px,
+      #aa9786 12px 13px,
+      #27211b 14px,
       transparent 15px
     )
     center top / 31px 42px repeat-y;
@@ -1142,13 +1142,13 @@ h1::after {
   margin-top: -9px;
 }
 .page-heading p {
-  color: #c4c7ad;
+  color: #c7baad;
   max-width: 480px;
 }
 .primary {
   border-radius: 5px 11px 5px 12px;
   border: 1px solid #f5d5a4;
-  box-shadow: 2px 3px 0 #0e160e99;
+  box-shadow: 2px 3px 0 #16120e99;
 }
 .page-heading > .primary {
   transform: rotate(2deg);
@@ -1162,10 +1162,10 @@ h1::after {
 .stats > div {
   position: relative;
   padding: 17px;
-  background: #303a2b;
-  border: 1px solid #a3aa7959;
+  background: #3b322a;
+  border: 1px solid #aa917959;
   border-radius: 4px 8px 2px 5px;
-  box-shadow: 2px 3px 0 #131a1466;
+  box-shadow: 2px 3px 0 #1a161366;
 }
 .stats > div:first-child {
   padding-left: 17px;
@@ -1180,7 +1180,7 @@ h1::after {
 }
 .stats > div:last-child {
   transform: rotate(2deg);
-  border-right: 1px solid #a3aa7959;
+  border-right: 1px solid #aa917959;
 }
 .stats > div::before {
   content: "";
@@ -1212,7 +1212,7 @@ h1::after {
   background: #3d3a28;
   border: 1px solid #b2a57670;
   border-radius: 2px 5px 14px 3px;
-  box-shadow: 3px 4px 0 #10180f55;
+  box-shadow: 3px 4px 0 #18130f55;
   padding: 26px 22px;
   margin-bottom: 40px;
   transform: rotate(-0.5deg);
@@ -1236,7 +1236,7 @@ h1::after {
   font-size: 37px;
   color: #e6bd79;
   transform: rotate(15deg);
-  text-shadow: 2px 2px #1d2519;
+  text-shadow: 2px 2px #251f19;
   pointer-events: none;
 }
 .review-banner h2 {
@@ -1266,12 +1266,12 @@ h1::after {
   transform: rotate(-2deg);
 }
 .collection-heading > div > span {
-  color: #c1c5aa;
+  color: #c5b7aa;
 }
 .search,
 .filters select {
-  background: #1f291f;
-  border-color: #8c997064;
+  background: #2a241e;
+  border-color: #99847064;
   border-radius: 3px 8px 4px 6px;
 }
 .buckets {
@@ -1281,17 +1281,17 @@ h1::after {
 .bucket {
   position: relative;
   overflow: visible;
-  border: 1px solid #798260;
+  border: 1px solid #84705e;
   border-radius: 3px 8px 18px 4px;
-  background: #2a3427;
+  background: #352d26;
   box-shadow:
-    3px 4px 0 #182017,
-    4px 5px 0 #677152;
+    3px 4px 0 #201b17,
+    4px 5px 0 #726151;
 }
 .bucket-header {
   padding: 23px 14px 17px;
   border-top: 0;
-  border-bottom: 1px dashed #a7ab7e66;
+  border-bottom: 1px dashed #ab947e66;
   border-radius: 3px 8px 0 0;
 }
 .bucket-header h3 {
@@ -1324,7 +1324,7 @@ h1::after {
   background: #3c3929;
 }
 .bucket.green .bucket-header {
-  background: #2c3c2d;
+  background: #3d342b;
 }
 .bucket-number {
   font-family: var(--hand);
@@ -1332,21 +1332,21 @@ h1::after {
 }
 .bucket-header p,
 .bucket-header p span {
-  color: #c9c9ae;
+  color: #c9bbae;
 }
 .bucket-sort {
   padding: 12px;
 }
 .bucket-sort > span,
 .bucket-sort select {
-  color: #c3c7ad;
+  color: #c7baad;
 }
 .bucket-content {
   padding: 0 12px 8px;
 }
 .problem-card {
   position: relative;
-  background-color: #343e2d;
+  background-color: #3f352c;
   background-image:
     linear-gradient(
       90deg,
@@ -1354,12 +1354,12 @@ h1::after {
       #db9a7438 11px 12px,
       transparent 12px
     ),
-    repeating-linear-gradient(transparent 0 27px, #d2d7aa18 27px 28px);
-  border: 1px solid #89926788;
+    repeating-linear-gradient(transparent 0 27px, #d4c0ac18 27px 28px);
+  border: 1px solid #927c6788;
   border-radius: 2px 4px 9px 3px;
   padding: 15px 12px 12px 21px;
   margin-bottom: 12px;
-  box-shadow: 2px 3px 0 #121b1266;
+  box-shadow: 2px 3px 0 #1b161266;
 }
 .problem-card:nth-child(3n + 1) {
   transform: rotate(-0.6deg);
@@ -1368,7 +1368,7 @@ h1::after {
   transform: rotate(0.7deg);
 }
 .problem-card:hover {
-  background-color: #3d4934;
+  background-color: #493e34;
   border-color: #d5bd86;
 }
 .problem-card h4 {
@@ -1381,30 +1381,30 @@ h1::after {
 }
 .card-top,
 .card-bottom {
-  color: #d0d0ae;
+  color: #d0beae;
 }
 .card-bottom {
-  border-top: 1px dashed #ccd2a738;
+  border-top: 1px dashed #d2bca738;
 }
 .tags span {
-  background: #25312199;
+  background: #31292199;
   border: 0;
   border-radius: 2px;
-  color: #d7d8b9;
+  color: #d8c8b9;
 }
 .bucket-add {
   font-family: var(--hand);
   font-size: 16px;
   color: #d6d5b6;
-  border-top: 1px dashed #a1ac7566;
+  border-top: 1px dashed #ac907566;
 }
 .bucket-add:hover {
-  background: #36442e;
+  background: #44392e;
 }
 .empty-bucket {
   background: repeating-linear-gradient(
     transparent 0 27px,
-    #d2d7aa18 27px 28px
+    #d4c0ac18 27px 28px
   );
   border-left: 1px solid #d6987640;
   margin: 0 5px 12px;
@@ -1413,25 +1413,25 @@ h1::after {
 .empty-bucket h4 {
   font-family: var(--hand);
   font-size: 21px;
-  color: #dedfc4;
+  color: #dfd1c4;
 }
 .empty-bucket p {
-  color: #c9cbae;
+  color: #cbbcae;
   font-size: 12px;
 }
 .empty-bucket svg {
-  color: #bdc59b;
+  color: #c5af9b;
   transform: rotate(-12deg);
 }
 footer {
-  border-top: 1px dashed #929d6e88;
-  color: #bcc3a3;
+  border-top: 1px dashed #9d856e88;
+  color: #c3b2a3;
 }
 dialog {
   background:
-    repeating-linear-gradient(transparent 0 31px, #c6cda70b 31px 32px), #252d23;
+    repeating-linear-gradient(transparent 0 31px, #cdb9a70b 31px 32px), #2f2821;
   border-radius: 4px 15px 13px 4px;
-  border: 1px solid #788461;
+  border: 1px solid #86725f;
   border-left: 5px solid #b59a71;
 }
 .modal-head h2 {
@@ -1476,10 +1476,10 @@ dialog {
     gap: 13px;
   }
   .stats > div:nth-child(2) {
-    border-right: 1px solid #a3aa7959;
+    border-right: 1px solid #aa917959;
   }
   .stats > div:nth-child(-n + 2) {
-    border-bottom: 1px solid #a3aa7959;
+    border-bottom: 1px solid #aa917959;
   }
 }
 @media (max-width: 480px) {
@@ -1535,5 +1535,167 @@ dialog {
   }
   .sidebar .brand {
     font-size: 16px;
+  }
+}
+
+/* Autumn leather and cocoa paper, with small, finite notebook motions. */
+:root {
+  background: #1d1511;
+  --accent: #efb779;
+  --green: #d4b78c;
+  --amber: #e4b56d;
+  --red: #df9e87;
+  --border: #574234;
+}
+.app-shell {
+  background: #1d1511;
+}
+.sidebar {
+  background-color: #2b201a;
+}
+.topbar {
+  background: #271d17;
+}
+.main-content {
+  background-color: #35281f;
+  border-color: #87684b;
+}
+.bucket.red .bucket-header {
+  background: #4a3027;
+}
+.bucket.amber .bucket-header {
+  background: #4b3926;
+}
+.bucket.green .bucket-header {
+  background: #413526;
+}
+.difficulty.easy {
+  background: #483d2d;
+  color: #ead4b0;
+}
+.dot.green {
+  background: #d4b78c;
+}
+.stats > div {
+  background-color: #4a3829;
+}
+.stats > div:nth-child(2) {
+  background-color: #54402a;
+}
+.review-banner {
+  background-color: #503b29;
+}
+.problem-card {
+  background-color: #49372a;
+}
+.problem-card:hover {
+  background-color: #574230;
+}
+.bucket {
+  background-color: #3d2e23;
+}
+.search,
+.filters select,
+input,
+select {
+  background-color: #2d211a;
+}
+.bucket-add:hover {
+  background-color: #513b29;
+}
+dialog {
+  background-color: #38291f;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .main-content {
+    transform-origin: left top;
+    animation: journal-open 520ms ease-out both;
+  }
+  h1::after {
+    transform-origin: left;
+    animation: pencil-underline 700ms 200ms ease-out both;
+  }
+  .stats > div {
+    animation: note-place 400ms ease-out both;
+  }
+  .stats > div:nth-child(2) {
+    animation-delay: 70ms;
+  }
+  .stats > div:nth-child(3) {
+    animation-delay: 140ms;
+  }
+  .stats > div:nth-child(4) {
+    animation-delay: 210ms;
+  }
+  .problem-card {
+    transition:
+      translate 180ms ease,
+      box-shadow 180ms ease,
+      background-color 180ms ease;
+  }
+  .problem-card:hover,
+  .problem-card:focus-visible {
+    translate: 0 -3px;
+    box-shadow: 3px 7px 5px #160d0966;
+  }
+  .bucket-header::before {
+    transform-origin: bottom left;
+    transition: transform 180ms ease;
+  }
+  .bucket:focus-within .bucket-header::before,
+  .bucket:hover .bucket-header::before {
+    transform: rotate(-6deg) translateY(-2px);
+  }
+  .primary {
+    transition:
+      translate 160ms ease,
+      box-shadow 160ms ease;
+  }
+  .primary:hover:not(:disabled) {
+    translate: 0 -2px;
+    box-shadow: 3px 5px 0 #160d0980;
+  }
+  .primary:active:not(:disabled) {
+    translate: 0 1px;
+  }
+  dialog[open] {
+    transform-origin: 15% top;
+    animation: journal-open 260ms ease-out both;
+  }
+}
+@keyframes journal-open {
+  from {
+    transform: perspective(1600px) rotateY(-3deg) translateX(-5px);
+  }
+  to {
+    transform: perspective(1600px) rotateY(0) translateX(0);
+  }
+}
+@keyframes note-place {
+  from {
+    translate: 0 -9px;
+  }
+  to {
+    translate: 0 0;
+  }
+}
+@keyframes pencil-underline {
+  from {
+    scale: 0 1;
+  }
+  to {
+    scale: 1 1;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .main-content,
+  h1::after,
+  .stats > div,
+  dialog,
+  .problem-card,
+  .primary,
+  .bucket-header::before {
+    animation: none;
+    transition: none;
   }
 }
