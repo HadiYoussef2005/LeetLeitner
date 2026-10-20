@@ -1412,11 +1412,8 @@ h1::after {
   background: #44392e;
 }
 .empty-bucket {
-  background: repeating-linear-gradient(
-    transparent 0 27px,
-    #d4c0ac18 27px 28px
-  );
-  border-left: 1px solid #d6987640;
+  background: none;
+  border-left: 0;
   margin: 0 5px 12px;
   padding: 35px 12px;
 }
@@ -1660,5 +1657,115 @@ dialog {
   .bucket-header::before {
     animation: none;
     transition: none;
+  }
+}
+/* Paper cards can be reclassified by dropping them onto a bucket. */
+.card-reference {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.card-reference svg {
+  color: #c9ac87;
+}
+.problem-card[draggable="true"] {
+  cursor: grab;
+}
+.problem-card[draggable="true"]:active {
+  cursor: grabbing;
+}
+.problem-card.dragging {
+  opacity: 0.45;
+}
+.bucket.drop-target {
+  outline: 2px dashed #efb779;
+  outline-offset: 5px;
+  background-color: #513c29;
+}
+.bucket.drop-target .bucket-header {
+  background-color: #5c422e;
+}
+.bucket.drop-target .bucket-add {
+  color: #ffe0b4;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .bucket {
+    transition: background-color 140ms ease;
+  }
+}
+/* A lifted paper preview travels with the native drag cursor. */
+.problem-card.drag-preview {
+  position: fixed;
+  left: -10000px;
+  top: 0;
+  margin: 0;
+  pointer-events: none;
+  opacity: 1;
+  transform: rotate(-2deg) scale(1.025);
+  box-shadow: 5px 10px 15px #160d0966;
+  border-color: #e6bb83;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .problem-card {
+    --paper-angle: 0deg;
+    transition:
+      translate 180ms ease,
+      transform 180ms ease,
+      box-shadow 180ms ease,
+      background-color 180ms ease;
+  }
+  .problem-card:nth-child(3n + 1) {
+    --paper-angle: -0.6deg;
+  }
+  .problem-card:nth-child(3n + 2) {
+    --paper-angle: 0.7deg;
+  }
+  .problem-card[draggable="true"]:active:not(.dragging) {
+    transform: rotate(-1.5deg) scale(1.02);
+    box-shadow: 4px 8px 12px #160d0966;
+  }
+  .problem-card.landing {
+    animation: paper-settle 320ms ease-out;
+  }
+}
+@keyframes paper-settle {
+  0% {
+    transform: translateY(-12px) rotate(-2deg) scale(1.025);
+    box-shadow: 5px 10px 15px #160d0966;
+  }
+  65% {
+    transform: translateY(1px) rotate(var(--paper-angle)) scale(0.995);
+  }
+  100% {
+    transform: translateY(0) rotate(var(--paper-angle)) scale(1);
+    box-shadow: 2px 3px 0 #121b1266;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .problem-card.drag-preview {
+    transform: none;
+  }
+}
+
+/* Ruling belongs to the whole bucket page, including its unused space. */
+.bucket-content {
+  position: relative;
+  isolation: isolate;
+}
+.bucket-content::before {
+  content: "";
+  position: absolute;
+  inset: 0 17px;
+  z-index: -1;
+  background: repeating-linear-gradient(
+    transparent 0 27px,
+    #d4c0ac18 27px 28px
+  );
+  border-left: 1px solid #d6987640;
+  pointer-events: none;
+}
+@media (min-width: 481px) and (max-width: 1100px) {
+  .empty-bucket {
+    grid-column: 1 / -1;
   }
 }
