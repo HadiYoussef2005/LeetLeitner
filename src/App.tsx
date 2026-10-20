@@ -50,6 +50,8 @@ import {
   type Snapshot,
 } from "./storage";
 import DataBackups from "./DataBackups";
+import QuickProblemEntry from "./QuickProblemEntry";
+import type { ProblemMetadata } from "./problem-reference";
 
 const SaveErrorContext = createContext("");
 
@@ -309,11 +311,15 @@ export default function App() {
             }}
           >
             <span className="brand-icon">
-              <Code2 size={22} />
+              <span className="brand-stack" aria-hidden="true">
+                <i />
+                <i />
+                <i />
+              </span>
             </span>
             Leet<span className="brand-light">Leitner</span>
           </a>
-          <div className="workspace-label">YOUR WORKSPACE</div>
+          <div className="workspace-label">PRACTICE</div>
           <nav aria-label="Main navigation">
             <button
               className={view === "dashboard" ? "nav-item active" : "nav-item"}
@@ -345,26 +351,35 @@ export default function App() {
             <div className="local-note">
               <ShieldCheck size={18} />
               <div>
-                Local-first. Always yours.<small>Saved in this browser</small>
+                Your personal notebook<small>Saved in this browser</small>
               </div>
             </div>
             <button className="nav-item" onClick={() => setSettingsOpen(true)}>
               <Settings2 size={18} />
               Preferences
             </button>
-            <div className="sidebar-foot">LESS MEMORIZING. MORE SOLVING.</div>
+            <div className="sidebar-foot">LEITNER / THREE BUCKETS</div>
           </div>
         </aside>
         <main>
           <header className="topbar">
             <span>
-              <span className="muted">Workspace</span>
+              <span className="muted">LeetLeitner</span>
               <ChevronRight size={14} />
               {view === "dashboard" ? "Overview" : "Review queue"}
             </span>
-            <span className="device-badge">
-              <span className="dot green" />
-              On-device storage
+            <span className="topbar-meta">
+              <time dateTime={today}>
+                {new Date(today + "T12:00:00").toLocaleDateString(undefined, {
+                  weekday: "short",
+                  month: "short",
+                  day: "numeric",
+                })}
+              </time>
+              <span className="device-badge">
+                <span className="dot green" />
+                Saved locally
+              </span>
             </span>
           </header>
           <div className="main-content">
@@ -381,16 +396,14 @@ export default function App() {
             )}
             <div className="page-heading">
               <div>
-                <div className="eyebrow">PRACTICE WITH PURPOSE</div>
+                <div className="eyebrow">THE WORKING SET</div>
                 <h1>
-                  {view === "dashboard"
-                    ? "Practice that sticks."
-                    : "Your review queue."}
+                  {view === "dashboard" ? "Problem notebook" : "Review queue"}
                 </h1>
                 <p>
                   {view === "dashboard"
-                    ? "Turn yesterday’s attempts into tomorrow’s confidence."
-                    : "One problem at a time. Solve, reflect, repeat."}
+                    ? "A record of what you solved, and what needs another attempt."
+                    : "Start with the oldest due problem. Record how the attempt went."}
                 </p>
               </div>
               <button
@@ -409,7 +422,7 @@ export default function App() {
                   {store.problems.length}
                   <Code2 size={23} />
                 </strong>
-                <small>Your growing problem library</small>
+                <small>In your notebook</small>
               </div>
               <div>
                 <span>Ready for review</span>
@@ -418,9 +431,7 @@ export default function App() {
                   <CalendarDays size={23} />
                 </strong>
                 <small>
-                  {overdue
-                    ? `${overdue} overdue · time for a refresh`
-                    : "A little practice goes a long way"}
+                  {overdue ? `${overdue} overdue` : "No overdue problems"}
                 </small>
               </div>
               <div>
@@ -429,7 +440,7 @@ export default function App() {
                   {store.problems.filter((p) => p.currentBucket === 3).length}
                   <Check size={23} />
                 </strong>
-                <small>Confidence built through repetition</small>
+                <small>Bucket 03 · without hints</small>
               </div>
               <div>
                 <span>Reviewed today</span>
@@ -437,7 +448,7 @@ export default function App() {
                   {reviewedToday}
                   <RotateCcw size={23} />
                 </strong>
-                <small>Every attempt is progress</small>
+                <small>Completed review attempts</small>
               </div>
             </section>
             <section className="review-banner">
@@ -445,39 +456,45 @@ export default function App() {
                 <ListChecks size={27} />
               </div>
               <div>
-                <span className="eyebrow">YOUR DAILY REP</span>
+                <span className="eyebrow">DAILY QUEUE</span>
                 <h2>
                   {queue.length
-                    ? `${queue.length} problem${queue.length === 1 ? "" : "s"} ready for another round.`
-                    : "A fresh start for lasting confidence."}
+                    ? `${queue.length} problem${queue.length === 1 ? "" : "s"} due for review`
+                    : store.problems.length
+                      ? "Nothing due right now"
+                      : "Start with one problem."}
                 </h2>
                 <p>
                   {queue.length
-                    ? "Reattempt a problem before checking the solution. Let your results set the pace."
+                    ? "Oldest due first. A failed attempt returns to Bucket 01."
                     : store.problems.length
-                      ? "You’re all caught up. Come back when your next review is due."
-                      : "Add your first attempted problem. We’ll take care of when to revisit it."}
+                      ? "Your next review will appear here when it’s due."
+                      : "Paste a LeetCode link or enter a problem number. The details fill themselves in."}
                 </p>
               </div>
               <button
                 className="primary"
-                disabled={!queue.length || locked}
-                onClick={() => startReview()}
+                disabled={
+                  locked || (store.problems.length > 0 && !queue.length)
+                }
+                onClick={() =>
+                  store.problems.length ? startReview() : setEditor("new")
+                }
               >
-                Start review
+                {store.problems.length
+                  ? "Start review"
+                  : "Add your first problem"}
                 <ArrowRight size={17} />
               </button>
             </section>
             <div className="collection-heading">
               <div>
                 <h2>
-                  {view === "dashboard"
-                    ? "Your problem library"
-                    : "Due & overdue"}
+                  {view === "dashboard" ? "The buckets" : "Due & overdue"}
                 </h2>
                 <span>
                   {view === "dashboard"
-                    ? "Three buckets. One stronger problem solver."
+                    ? "Sorted by the outcome of your last attempt."
                     : "Oldest due first, with weaker buckets prioritized."}
                 </span>
               </div>
@@ -596,12 +613,12 @@ export default function App() {
                             <h4>
                               {query || difficulty !== "All difficulties"
                                 ? "No matching problems"
-                                : "Room to grow"}
+                                : "No problems yet"}
                             </h4>
                             <p>
                               {query
                                 ? "Try a different search."
-                                : `Your ${definition.name.toLowerCase()} problems will live here.`}
+                                : `Problems marked “${definition.name}” appear here.`}
                             </p>
                           </div>
                         )}
@@ -748,7 +765,7 @@ export default function App() {
                 Your progress stays on this device. Clearing browser data
                 removes it.
               </span>
-              <span>Build skill. Keep it.</span>
+              <span>LeetLeitner</span>
             </footer>
           </div>
         </main>
@@ -1095,7 +1112,7 @@ export default function App() {
                 <span className="summary-icon">
                   <Check size={32} />
                 </span>
-                <h2>Another step forward.</h2>
+                <h2>Session finished</h2>
                 <p>
                   You reviewed{" "}
                   {Object.values(session.counts).reduce((a, b) => a + b, 0)}{" "}
@@ -1182,6 +1199,8 @@ function ProblemEditor({
   onDuplicate: (p: Problem) => void;
 }) {
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [manual, setManual] = useState(Boolean(existing));
+  const [seed, setSeed] = useState<Partial<ProblemMetadata>>({});
   const [outcome, setOutcome] = useState<Outcome>("could_not_solve");
   const [number, setNumber] = useState(
     existing ? String(existing.problemNumber) : "",
@@ -1210,6 +1229,24 @@ function ProblemEditor({
   const duplicate = store.problems.find(
     (p) => p.problemNumber === Number(number) && p.id !== existing?.id,
   );
+  if (!existing && !manual)
+    return (
+      <Modal title="Add a problem" onClose={onClose}>
+        <QuickProblemEntry
+          store={store}
+          outcome={outcome}
+          onOutcome={setOutcome}
+          onSave={onSave}
+          onDuplicate={onDuplicate}
+          onClose={onClose}
+          onManual={(value) => {
+            setSeed(value);
+            setNumber(value.problemNumber ? String(value.problemNumber) : "");
+            setManual(true);
+          }}
+        />
+      </Modal>
+    );
   return (
     <Modal
       title={existing ? "Edit problem" : "Add a problem"}
@@ -1220,6 +1257,15 @@ function ProblemEditor({
           ? "Update the details. Your schedule and attempt history stay intact."
           : "Capture your latest attempt. We’ll schedule the next one."}
       </p>
+      {!existing && (
+        <button
+          type="button"
+          className="text-button manual-back"
+          onClick={() => setManual(false)}
+        >
+          Use a link or number instead
+        </button>
+      )}
       <form onSubmit={submit} noValidate>
         <div className="form-grid">
           <label className="field">
@@ -1256,7 +1302,8 @@ function ProblemEditor({
             Difficulty
             <select
               name="difficulty"
-              defaultValue={existing?.difficulty || "Easy"}
+              aria-label="Difficulty"
+              defaultValue={existing?.difficulty || seed.difficulty || "Easy"}
             >
               <option>Easy</option>
               <option>Medium</option>
@@ -1268,7 +1315,7 @@ function ProblemEditor({
           Title
           <input
             name="title"
-            defaultValue={existing?.title}
+            defaultValue={existing?.title ?? seed.title}
             placeholder="e.g. Two Sum"
             aria-invalid={Boolean(errors.title)}
             aria-describedby={errors.title ? "error-title" : undefined}
@@ -1284,7 +1331,7 @@ function ProblemEditor({
           <input
             name="url"
             type="url"
-            defaultValue={existing?.url}
+            defaultValue={existing?.url ?? seed.url}
             placeholder="https://leetcode.com/problems/two-sum/"
             aria-invalid={Boolean(errors.url)}
             aria-describedby={errors.url ? "error-url" : undefined}
@@ -1299,7 +1346,7 @@ function ProblemEditor({
           Tags <span className="muted">(optional)</span>
           <input
             name="tags"
-            defaultValue={existing?.tags.join(", ")}
+            defaultValue={(existing?.tags ?? seed.tags)?.join(", ")}
             placeholder="Array, Hash Table"
           />
           <small>Separate tags with commas.</small>

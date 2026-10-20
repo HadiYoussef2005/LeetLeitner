@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap");
 :root {
   font-family: "DM Sans", system-ui, sans-serif;
   color: #e7eaf0;
@@ -1263,6 +1263,44 @@ progress {
   margin-top: 28px;
   padding-top: 24px;
   border-top: 1px solid var(--border);
+}
+.lookup-preview {
+  border: 1px solid #587347;
+  background: #222c22;
+  border-radius: 8px;
+  padding: 17px;
+  margin: 0 0 22px;
+}
+.lookup-preview > div:first-child {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+}
+.lookup-preview h3 {
+  font-size: 17px;
+  line-height: 1.5;
+  margin: 10px 0 12px;
+}
+.lookup-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--green);
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+.lookup-manual {
+  margin-top: 14px;
+}
+.duplicate-notice {
+  margin-top: 15px;
+  color: #c8dfb7;
+  font-size: 12px;
+  line-height: 1.6;
+}
+.manual-back {
+  margin: 0 0 15px;
 }
 .data-heading {
   display: flex;

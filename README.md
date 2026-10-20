@@ -21,7 +21,22 @@ npm run build
 npm run preview
 ```
 
-React + TypeScript + Vite, with custom responsive CSS and LocalStorage persistence. No account, backend, scraping, or cloud sync. Production builds include a service worker that caches the application shell for offline use after the first successful visit. Development mode does not register the service worker. Optional web fonts fall back to system fonts offline.
+React + TypeScript + Vite, with a responsive notebook interface and LocalStorage persistence. No account, database, or cloud sync. A read-only Vercel function fetches public problem metadata from LeetCode; review records and backups remain in the browser. Production builds include a service worker that caches the application shell for offline use after the first successful visit. Development mode does not register the service worker. Optional IBM Plex fonts fall back to system fonts offline.
+
+## Add a problem
+
+Paste a LeetCode problem link or enter its displayed number (for example, `1` or `#1`). After a short pause, the app resolves its title, number, difficulty, tags, and canonical URL. Select your attempt outcome and click **Add problem**. Description/solution links and links with sharing parameters are normalized automatically. Pressing **Find problem** runs the lookup immediately.
+
+Problems already in your notebook open the existing record rather than creating duplicates. You can use **Edit details manually** to adjust fetched metadata, or **Enter manually** if lookup is unavailable. Manual entry, reviews, and file backups work offline; new metadata lookups require a connection.
+
+The browser calls `GET /leetleitner/api/problem.json?input=…`. The server makes GET requests to LeetCode's GraphQL metadata endpoint; for a number it first resolves the displayed problem number through LeetCode's public problem catalogue. This avoids cross-origin browser restrictions and does not fetch protected HTML pages, solutions, submissions, or account information. No LeetCode cookies or API keys are required. These upstream endpoints can change or deny requests; failures never save guessed metadata.
+
+Public metadata is cached for an hour and identical in-flight requests are shared. Requests have timeouts and bounded response sizes. Only fixed `leetcode.com` endpoints are contacted; arbitrary pasted URLs are rejected. Vite dev and preview provide the same endpoint locally, while production needs the included Vercel function (static-file-only hosts retain manual entry).
+
+```sh
+# With npm run preview -- --port 4173 running:
+npm run test:link-input
+```
 
 ## Rules
 

@@ -52,6 +52,16 @@ Open `http://localhost:4174/` and `http://localhost:4174/leetleitner/`. The app'
 
 ## Build and storage details
 
+### Public metadata lookup
+
+Vercel deploys `api/problem.ts` as a Node.js function. `vercel.json` rewrites `/leetleitner/api/problem.json` to it. The `.json` path avoids trailing-slash redirects, including through the portfolio proxy. The existing portfolio wildcard rewrite forwards this endpoint; no portfolio source changes or new environment variables are needed for this feature.
+
+Vite dev and preview expose the same API locally through `server/vite-metadata.ts`. Do not copy just `dist` to a static-only production host and expect automatic lookups to work: Vercel must deploy the function source alongside the static output. The rest of the app still works with manual entry. The service worker deliberately bypasses `/leetleitner/api/`.
+
+The function only retrieves public metadata using GET requests to fixed LeetCode endpoints. It never stores or receives review history, imports, or backups. Lookup needs internet access and falls back to manual entry on upstream failure. The 25-second function budget covers the bounded catalogue and detail requests. See [Vercel's Node.js function documentation](https://vercel.com/docs/functions/runtimes/node-js).
+
+### Static assets and local state
+
 `hosting.config.json` is the shared base-path definition. Vite writes physical files under `dist/leetleitner/`, and the offline generator uses the same definition. `prebuild` cleans only this repository's generated `dist` folder so earlier root-level bundles cannot accidentally ship.
 
 The service worker caches only app assets, ignores requests outside the app prefix, and cleans only its own path-specific cache namespace. It does not cache or provide an offline fallback for the portfolio.

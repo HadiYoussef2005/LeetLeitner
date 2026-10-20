@@ -62,6 +62,9 @@ async function restore() {
 }
 async function add(n) {
   await page.getByRole("button", { name: "Add problem", exact: true }).click();
+  await page
+    .getByRole("button", { name: "Enter manually", exact: true })
+    .click();
   await page.getByLabel("Problem number", { exact: true }).fill(String(n));
   await page
     .getByLabel("Title", { exact: true })

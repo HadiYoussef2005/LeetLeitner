@@ -1,5 +1,20 @@
 # Phase 1 verification
 
+## Link/number entry and notebook redesign — October 20, 2026
+
+New problems default to one link/number field, followed by an automatically populated metadata preview and the attempt outcome. Manual entry is a fallback. The visual theme now uses IBM Plex type, graphite surfaces, amber accents, a three-card mark, restrained borders, denser problem cards, and factual status copy.
+
+- `npm test`: 113 tests pass, including URL normalization, displayed-number resolution, metadata validation, cache expiry/single-flight sharing, upstream response bounds, bad responses, timeouts, client cancellation, credential omission, and hosted base paths.
+- `npm run build`: TypeScript and the production bundle pass, including server/function source type checks.
+- `npm run test:link-input`: real LeetCode GET lookups for a number and a full description link return 200 through the app endpoint. Browser checks cover automatic metadata, both entry styles, selected outcome scheduling, duplicate detection without a request, stale-response cancellation, failed/not-found lookups, manual fallback with prefilled values, cancellation without saving, responsive layout, reload persistence, and offline manual saving. Axe reports zero A/AA violations in the new form.
+- The existing review, data-portability, and browser-restart checks pass with the notebook interface and explicit manual-entry fallback.
+- Populated desktop and mobile views and the metadata dialog were visually inspected. Screenshots and the focused browser report are in ignored `.test-results/`.
+- The final 1,000-problem sort benchmark passes at 72.2 ms p95 across 30 browser updates (87.2 ms maximum), below the existing 100 ms target.
+
+The deployed API entry is `api/problem.ts`; it exports a Vercel Web Standard fetch handler, and the `.json` subpath rewrite retains compatibility with the existing portfolio proxy. Vite dev/preview use the same handler. Live LeetCode GETs were verified locally; deploying this feature to Vercel is separate from committing the branch.
+
+Only the public problem reference is sent to the read-only service. Review records, histories, settings, and backups remain local. Metadata lookup needs internet access and uses LeetCode's currently available endpoints; upstream denial or schema changes produce a recoverable error rather than guessed records. There is no authenticated LeetCode integration or submission tracking.
+
 ## Data portability feature verification — October 12, 2026
 
 The export/import/restore ticket is implemented under **Preferences → Data & Backups**. Production build and 57 unit tests pass (19 scheduling tests plus 38 portability/storage tests). The existing daily-review browser suite also passes with the new storage envelope.

@@ -10,6 +10,7 @@ let context = await chromium.launchPersistentContext(profile, {
 let page = await context.newPage();
 await page.goto("http://127.0.0.1:4173/leetleitner/");
 await page.getByRole("button", { name: "Add problem", exact: true }).click();
+await page.getByRole("button", { name: "Enter manually", exact: true }).click();
 await page.getByLabel("Problem number", { exact: true }).fill("42");
 await page.getByLabel("Title", { exact: true }).fill("Browser restart check");
 await page
