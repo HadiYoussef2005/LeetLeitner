@@ -1761,3 +1761,45 @@ dialog {
     grid-column: 1 / -1;
   }
 }
+/* Buckets fit within one screen; only their problem pages scroll. */
+.bucket {
+  max-height: calc(100vh - 32px);
+  max-height: calc(100dvh - 32px);
+  min-height: min(340px, calc(100dvh - 32px));
+}
+.bucket-header,
+.bucket-sort,
+.bucket-add,
+.bucket > .pagination {
+  flex-shrink: 0;
+}
+.bucket-content {
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: #9c7954 #302219;
+  scrollbar-gutter: stable;
+  align-content: start;
+  background-image:
+    linear-gradient(#d6987640, #d6987640),
+    repeating-linear-gradient(transparent 0 27px, #d4c0ac18 27px 28px);
+  background-size:
+    1px 100%,
+    calc(100% - 34px) 28px;
+  background-position: 17px 0;
+  background-repeat: no-repeat, repeat-y;
+  background-attachment: local;
+}
+.bucket-content::before {
+  content: none;
+}
+.bucket-content:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -3px;
+}
+@media (max-width: 1100px) {
+  .bucket-content {
+    grid-auto-rows: max-content;
+  }
+}

@@ -658,7 +658,12 @@ export default function App() {
                           <option value="difficulty">Difficulty</option>
                         </select>
                       </div>
-                      <div className="bucket-content">
+                      <div
+                        className="bucket-content"
+                        role="region"
+                        aria-label={`Problems in ${definition.name}`}
+                        tabIndex={0}
+                      >
                         {problems.length ? (
                           problems
                             .slice(
