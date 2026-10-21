@@ -147,6 +147,11 @@ export default function App() {
   const [editor, setEditor] = useState<Problem | "new" | null>(null),
     [detail, setDetail] = useState<Problem | null>(null),
     [settingsOpen, setSettingsOpen] = useState(false);
+  const [newOutcome, setNewOutcome] = useState<Outcome>("could_not_solve");
+  function openNewProblem(bucket: Bucket = 1) {
+    setNewOutcome(BUCKETS[bucket].outcome);
+    setEditor("new");
+  }
   const [session, setSession] = useState<{
     ids: string[];
     index: number;
@@ -451,7 +456,7 @@ export default function App() {
               </div>
               <button
                 className="primary"
-                onClick={() => setEditor("new")}
+                onClick={() => openNewProblem()}
                 disabled={locked}
               >
                 <Plus size={18} />
@@ -521,7 +526,7 @@ export default function App() {
                   locked || (store.problems.length > 0 && !queue.length)
                 }
                 onClick={() =>
-                  store.problems.length ? startReview() : setEditor("new")
+                  store.problems.length ? startReview() : openNewProblem()
                 }
               >
                 {store.problems.length
@@ -771,7 +776,7 @@ export default function App() {
                       <button
                         className="bucket-add"
                         disabled={locked}
-                        onClick={() => setEditor("new")}
+                        onClick={() => openNewProblem(bucket)}
                       >
                         <Plus size={15} />
                         Add a problem
@@ -884,6 +889,7 @@ export default function App() {
         {editor && (
           <ProblemEditor
             existing={editor === "new" ? null : editor}
+            initialOutcome={newOutcome}
             store={store}
             onClose={() => setEditor(null)}
             onDuplicate={(p) => {
@@ -1309,12 +1315,14 @@ function ProblemCard({
 }
 function ProblemEditor({
   existing,
+  initialOutcome,
   store,
   onSave,
   onClose,
   onDuplicate,
 }: {
   existing: Problem | null;
+  initialOutcome: Outcome;
   store: Store;
   onSave: (
     p: Pick<Problem, "problemNumber" | "title" | "url" | "difficulty" | "tags">,
@@ -1326,7 +1334,7 @@ function ProblemEditor({
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [manual, setManual] = useState(Boolean(existing));
   const [seed, setSeed] = useState<Partial<ProblemMetadata>>({});
-  const [outcome, setOutcome] = useState<Outcome>("could_not_solve");
+  const [outcome, setOutcome] = useState<Outcome>(initialOutcome);
   const [number, setNumber] = useState(
     existing ? String(existing.problemNumber) : "",
   );

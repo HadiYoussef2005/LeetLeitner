@@ -16,11 +16,36 @@ const data = () =>
   page.evaluate(
     () => JSON.parse(localStorage.getItem("leetleitner.v1")).activeState,
   );
-const add = async (number, title, outcome = "Solved") => {
-  await page.getByRole("button", { name: "Add problem", exact: true }).click();
+const add = async (number, title, outcome = "Solved", bucket) => {
+  if (bucket) {
+    await page
+      .locator(".bucket")
+      .nth(bucket - 1)
+      .getByRole("button", { name: "Add a problem", exact: true })
+      .click();
+  } else {
+    await page
+      .getByRole("button", { name: "Add problem", exact: true })
+      .click();
+  }
+  const initialOutcome = ["Couldn't Solve", "Solved with Help", "Solved"][
+    (bucket ?? 1) - 1
+  ];
+  assert.equal(
+    await page
+      .getByRole("radio", { name: new RegExp("^" + initialOutcome + " Next") })
+      .isChecked(),
+    true,
+  );
   await page
     .getByRole("button", { name: "Enter manually", exact: true })
     .click();
+  assert.equal(
+    await page
+      .getByRole("radio", { name: new RegExp("^" + initialOutcome + " Next") })
+      .isChecked(),
+    true,
+  );
   await page.getByLabel("Problem number", { exact: true }).fill(String(number));
   await page.getByLabel("Title", { exact: true }).fill(title);
   await page
@@ -44,9 +69,17 @@ const add = async (number, title, outcome = "Solved") => {
 };
 try {
   await page.goto(url);
-  await add(1, "Two Sum");
-  await add(2, "Add Two Numbers", "Solved with Help");
-  await add(3, "Longest Substring", "Couldn't Solve");
+  await add(1, "Two Sum", "Solved", 3);
+  await add(2, "Add Two Numbers", "Solved with Help", 2);
+  await add(3, "Longest Substring", "Couldn't Solve", 1);
+  await page.locator(".bucket.green .bucket-add").click();
+  await page.getByRole("button", { name: "Cancel", exact: true }).click();
+  await page.getByRole("button", { name: "Add problem", exact: true }).click();
+  assert.equal(
+    await page.getByRole("radio", { name: /^Couldn't Solve Next/ }).isChecked(),
+    true,
+  );
+  await page.getByRole("button", { name: "Cancel", exact: true }).click();
   let state = await data();
   assert.deepEqual(
     state.problems.map((p) => p.currentBucket),
