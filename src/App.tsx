@@ -631,7 +631,9 @@ export default function App() {
                       <div className="bucket-sort">
                         <span>
                           <Clock3 size={13} />
-                          REVIEW SCHEDULE
+                          {dropBucket === bucket
+                            ? "DROP HERE"
+                            : "REVIEW SCHEDULE"}
                         </span>
                         <select
                           aria-label={`Sort ${definition.name}`}
@@ -656,7 +658,12 @@ export default function App() {
                           <option value="difficulty">Difficulty</option>
                         </select>
                       </div>
-                      <div className="bucket-content">
+                      <div
+                        className="bucket-content"
+                        role="region"
+                        aria-label={`Problems in ${definition.name}`}
+                        tabIndex={0}
+                      >
                         {problems.length ? (
                           problems
                             .slice(
