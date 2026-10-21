@@ -1626,14 +1626,6 @@ dialog {
     translate: 0 -3px;
     box-shadow: 3px 7px 5px #160d0966;
   }
-  .bucket-header::before {
-    transform-origin: bottom left;
-    transition: transform 180ms ease;
-  }
-  .bucket:focus-within .bucket-header::before,
-  .bucket:hover .bucket-header::before {
-    transform: rotate(-6deg) translateY(-2px);
-  }
   .primary {
     transition:
       translate 160ms ease,

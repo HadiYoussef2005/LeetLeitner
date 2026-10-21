@@ -631,7 +631,9 @@ export default function App() {
                       <div className="bucket-sort">
                         <span>
                           <Clock3 size={13} />
-                          REVIEW SCHEDULE
+                          {dropBucket === bucket
+                            ? "DROP HERE"
+                            : "REVIEW SCHEDULE"}
                         </span>
                         <select
                           aria-label={`Sort ${definition.name}`}
